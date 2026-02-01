@@ -1,14 +1,19 @@
 using UnityEngine;
+using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Icono_Accesibilidad : MonoBehaviour
 {
-    public Transform player = null; // Referencia a player para que lo siga
+    public Transform player; // Referencia a player para que lo siga
     public float speed = 2;
+    private NavMeshAgent agent; // Referencia del enemigo 
+    private float distance; 
+    public float attackDistance;
 
     void Awake()
     {
+        agent = GetComponent<NavMeshAgent>(); // Para poder usar el NavMeshAgent
         player = GameObject.FindGameObjectWithTag("player").GetComponent<Transform>(); // Encuentra la posición del jugador
     }
 
@@ -22,9 +27,16 @@ public class Icono_Accesibilidad : MonoBehaviour
 
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime); // La dirección a la que se va a mover el enemigo para seguir al jugador
-            Vector3 directionToFollow = player.position - transform.position; // La dirección a la que el enemigo va a rotar
+            distance = Vector3.Distance(agent.transform.position, player.position); // La distancia se calcula entre la posicion del transform del enemigo y la posicion del jugador
+            if (distance < attackDistance) // Si la distancia es menor que la distancia de ataque
+            {
+                agent.isStopped = true; // Se para el enemigo
+            }
+            else // Si el jugador se aleja
+            {
+                agent.isStopped = false; // El enemigo se puede volver  a mover
+                agent.destination = player.position; // El enemigo sigue al jugador
+            }
         }
-
     }
 }
