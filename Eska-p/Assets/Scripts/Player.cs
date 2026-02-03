@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-
+        Time.timeScale = 1f;  // El juego se inciia, esto deberá estar en gamemanager pero por ahora aquí
     }
 
     // Update is called once per frame
@@ -25,8 +25,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other) 
+    {
+        if (other.gameObject.CompareTag("Restore")) // AL tocar el trigger invisible
+        {
+            health = 3; // La vida se restaura a 3
+        }
+    }
+
+
     private void Die()
     {
         Debug.Log("muerte");
+        Time.timeScale = 0f;
     }
 }
