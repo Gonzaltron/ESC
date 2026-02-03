@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-
+        Time.timeScale = 1f;  // El juego se inciia, esto deberá estar en gamemanager pero por ahora aquí
     }
 
     // Update is called once per frame
@@ -37,5 +37,6 @@ public class Player : MonoBehaviour
     private void Die()
     {
         Debug.Log("muerte");
+        Time.timeScale = 0f;
     }
 }
