@@ -46,7 +46,6 @@ public class Icono_Accesibilidad : MonoBehaviour
             }
         }
     }
-
     public void StartAttack()
     {
         if (!isAttacking) // Si no está atacando
