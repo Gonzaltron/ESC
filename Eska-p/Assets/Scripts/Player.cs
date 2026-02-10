@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other) 
+    public void OnTriggerEnter(Collider other) 
     {
         if (other.gameObject.CompareTag("Restore")) // AL tocar el trigger invisible
         {
@@ -33,8 +33,7 @@ public class Player : MonoBehaviour
         }
     }
 
-
-    private void Die()
+    public void Die()
     {
         Debug.Log("muerte");
         Time.timeScale = 0f;
