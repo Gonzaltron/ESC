@@ -122,10 +122,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041e5b4a431e9044ca84cc2796f546af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerT: {fileID: 0}
+  playerT: {fileID: 8093818310404501921, guid: 4964953dff287694596463f5ad7eead6, type: 3}
   speed: 2
   attackDistance: 2
-  player: {fileID: 0}
+  player: {fileID: 1624319360984318666, guid: 4964953dff287694596463f5ad7eead6, type: 3}
 --- !u!195 &5326239184748415786
 NavMeshAgent:
   m_ObjectHideFlags: 0

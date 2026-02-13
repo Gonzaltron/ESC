@@ -20,7 +20,7 @@ public class Icono_Accesibilidad : MonoBehaviour
     void Start()
     {
         playerT = GameObject.FindGameObjectWithTag("player").GetComponent<Transform>(); // Encuentra la posición del jugador
-        player = playerT.gameObject;
+        player = playerT.gameObject; // Consigo direcamente el player 
     }
 
     // Update is called once per frame
