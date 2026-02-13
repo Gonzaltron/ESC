@@ -16,7 +16,11 @@ public class Icono_Accesibilidad : MonoBehaviour
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>(); // Para poder usar el NavMeshAgent
+    }
+    void Start()
+    {
         playerT = GameObject.FindGameObjectWithTag("player").GetComponent<Transform>(); // Encuentra la posición del jugador
+        player = playerT.gameObject;
     }
 
     // Update is called once per frame
