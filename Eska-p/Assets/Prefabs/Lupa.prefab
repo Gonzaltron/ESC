@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 4269376034164989465}
   - component: {fileID: 7065122651762991411}
   - component: {fileID: 5002152297412276513}
-  - component: {fileID: 1115146553169255556}
   - component: {fileID: 2479362902218959545}
   m_Layer: 0
-  m_Name: EnemyExample
+  m_Name: Lupa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,18 +127,6 @@ MonoBehaviour:
   m_PositionUnits: 1
   m_Speed: 5
   m_Position: 0
---- !u!114 &1115146553169255556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8743066002857522823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89dbf0117a4e6f640858a91101324734, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &2479362902218959545
 Rigidbody:
   m_ObjectHideFlags: 0
