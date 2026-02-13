@@ -21,7 +21,6 @@ public class playercontroller : MonoBehaviour
         float ver = Input.GetAxis("Vertical");
 
         movementDirection = new Vector3(hor * speed, 0.0f, ver * speed);
-        moveVel = transform.eulerAngles * speed * movementDirection.sqrMagnitude;
         transform.position += movementDirection * speed * Time.deltaTime;
 
     }
