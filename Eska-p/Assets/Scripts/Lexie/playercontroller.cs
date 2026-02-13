@@ -24,10 +24,5 @@ public class playercontroller : MonoBehaviour
         transform.position += movementDirection * speed * Time.deltaTime;
 
     }
-    public void FixedUpdate()
-    {
-        rb.linearVelocity = moveVel;
 
-        
-    }
 }
