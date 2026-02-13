@@ -12,21 +12,23 @@ public class playercontroller : MonoBehaviour
 
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        float hor = Input.GetAxis("Horizontar");
+        float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
 
-        movementDirection = new Vector3(hor, 0f, ver);
-        moveVel = transform.forward * speed * movementDirection.sqrMagnitude;
+        movementDirection = new Vector3(hor * speed, 0.0f, ver * speed);
+        moveVel = transform.eulerAngles * speed * movementDirection.sqrMagnitude;
+        transform.position += movementDirection * speed * Time.deltaTime;
 
     }
     public void FixedUpdate()
     {
         rb.linearVelocity = moveVel;
+
         
     }
 }
