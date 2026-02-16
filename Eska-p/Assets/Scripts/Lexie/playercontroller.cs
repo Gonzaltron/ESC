@@ -9,6 +9,7 @@ public class playercontroller : MonoBehaviour
     private Vector3 movementDirection;
     private Vector3 moveVel;
     private Rigidbody rb;
+    private bool onground = true;
 
     void Start()
     {
@@ -19,10 +20,12 @@ public class playercontroller : MonoBehaviour
     {
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
+        float sal = Input.GetAxis("Jump");
 
-        movementDirection = new Vector3(hor * speed, 0.0f, ver * speed);
+        movementDirection = new Vector3(hor * speed, sal * speed, ver * speed);
         transform.position += movementDirection * speed * Time.deltaTime;
 
     }
+
 
 }
