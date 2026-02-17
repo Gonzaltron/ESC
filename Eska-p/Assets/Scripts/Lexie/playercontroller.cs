@@ -6,7 +6,7 @@ using System.Collections;
 public class playercontroller : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float Gravity = -9;
+    [SerializeField] private float Gravity;
 
     private Vector3 movementDirection;
     private Vector3 moveVel;
@@ -19,7 +19,6 @@ public class playercontroller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
     }
     private void Awake()
     {
@@ -42,14 +41,18 @@ public class playercontroller : MonoBehaviour
         movementDirection = new Vector3(hor * speed, sal * speed, ver * speed);
         transform.position += movementDirection * speed * Time.deltaTime;
         controlador.Move(movementDirection);
-
     }
     private void Gravedad()
     {
         velVertical.y += Gravity * Time.deltaTime;
         controlador.Move(velVertical * Time.deltaTime);
-
-
+    }
+    private void SaltoBombastic()
+    {
+        if (onground)
+        {
+            rb.AddForce(new Vector3)
+        }
     }
 
 
