@@ -7,6 +7,9 @@ public class playercontroller : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float Gravity;
+    [SerializeField] private float fCaida;
+    [SerializeField] private float arribaTime;
+
 
     private Vector3 movementDirection;
     private Vector3 moveVel;
@@ -29,8 +32,17 @@ public class playercontroller : MonoBehaviour
     {
         MovimientoNormal();
         Gravedad();
+        SaltoBombastic();
 
     }
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if (other.contacts[0.5].normal.y >= 0.5)
+        {
+
+        }
+    }*/
     private void MovimientoNormal()
     {
         //Teclas
@@ -47,13 +59,13 @@ public class playercontroller : MonoBehaviour
         velVertical.y += Gravity * Time.deltaTime;
         controlador.Move(velVertical * Time.deltaTime);
     }
-    private void SaltoBombastic()
+    private IEnumerator SaltoBombastic()
     {
-        if (onground)
-        {
-            rb.AddForce(new Vector3)
-        }
+        yield return new WaitForSeconds(arribaTime);
+        rb.AddForce(Vector3.down * fCaida, ForceMode.Impulse);
     }
+    
+    
 
 
 }

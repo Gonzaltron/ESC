@@ -592,6 +592,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   Gravity: -9
+  fCaida: 5
+  arribaTime: 0.5
 --- !u!143 &1900062523
 CharacterController:
   m_ObjectHideFlags: 0
