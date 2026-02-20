@@ -20,7 +20,7 @@ public class Icono_Accesibilidad : MonoBehaviour
     void Start()
     {
         playerT = GameObject.FindGameObjectWithTag("player").GetComponent<Transform>(); // Encuentra la posición del jugador
-        player = playerT.gameObject;
+        player = playerT.gameObject; // Consigo direcamente el player 
     }
 
     // Update is called once per frame
@@ -73,7 +73,6 @@ public class Icono_Accesibilidad : MonoBehaviour
             }
             else
             {
-                Debug.Log("ataque");
                 playerHp.TakeDamage(1); // Llama a la función de takeDamage del script del jugador
                 if (playerHp.health <= 0) // Si la vida es igual o menor a 0
                 {

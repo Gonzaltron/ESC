@@ -3,7 +3,6 @@ using UnityEngine.UIElements;
 
 public class Boton_reinicio : MonoBehaviour
 {
-    bool a = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
