@@ -73,7 +73,6 @@ public class Icono_Accesibilidad : MonoBehaviour
             }
             else
             {
-                Debug.Log("ataque");
                 playerHp.TakeDamage(1); // Llama a la función de takeDamage del script del jugador
                 if (playerHp.health <= 0) // Si la vida es igual o menor a 0
                 {
