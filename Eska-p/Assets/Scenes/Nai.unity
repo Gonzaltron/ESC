@@ -344,9 +344,10 @@ GameObject:
   - component: {fileID: 869887248}
   - component: {fileID: 869887247}
   - component: {fileID: 869887246}
+  - component: {fileID: 869887250}
   m_Layer: 0
   m_Name: Suelo
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -434,12 +435,39 @@ Transform:
   m_GameObject: {fileID: 869887245}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.98, y: -3.33, z: 20.21}
-  m_LocalScale: {x: 16.210659, y: 1, z: 39.764603}
+  m_LocalPosition: {x: -28.5, y: -3.3, z: 27.6}
+  m_LocalScale: {x: 145.92612, y: 1, z: 101.88443}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &869887250
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869887245}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1900062516
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +621,7 @@ MonoBehaviour:
   speed: 1
   Gravity: -9
   fCaida: 5
-  arribaTime: 0.5
+  arribaTime: 1
 --- !u!143 &1900062523
 CharacterController:
   m_ObjectHideFlags: 0

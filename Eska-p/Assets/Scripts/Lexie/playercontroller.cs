@@ -18,6 +18,7 @@ public class playercontroller : MonoBehaviour
     private Vector3 velVertical;
     private CharacterController controlador;
     
+    
 
     void Start()
     {
@@ -36,13 +37,7 @@ public class playercontroller : MonoBehaviour
 
     }
 
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if (other.contacts[0.5].normal.y >= 0.5)
-        {
-
-        }
-    }*/
+    
     private void MovimientoNormal()
     {
         //Teclas
@@ -50,8 +45,8 @@ public class playercontroller : MonoBehaviour
         float ver = Input.GetAxis("Vertical");
         float sal = Input.GetAxis("Jump");
 
-        movementDirection = new Vector3(hor * speed, sal * speed, ver * speed);
-        transform.position += movementDirection * speed * Time.deltaTime;
+        movementDirection = new Vector3(hor * speed, sal* speed, ver * speed);
+        transform.position = movementDirection * speed * Time.deltaTime;
         controlador.Move(movementDirection);
     }
     private void Gravedad()
@@ -61,11 +56,14 @@ public class playercontroller : MonoBehaviour
     }
     private IEnumerator SaltoBombastic()
     {
-        yield return new WaitForSeconds(arribaTime);
-        rb.AddForce(Vector3.down * fCaida, ForceMode.Impulse);
-    }
-    
-    
+        
+        if (Input.GetKeyDown(KeyCode.E) && !onground)
+        {
+            yield return new WaitForSeconds(arribaTime);
+            rb.AddForce(Vector3.down * fCaida, ForceMode.Impulse);
 
+        }
+        
+    }
 
 }

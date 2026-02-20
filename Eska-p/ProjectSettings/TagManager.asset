@@ -6,6 +6,7 @@ TagManager:
   tags:
   - player
   - Restore
+  - Ground
   layers:
   - Default
   - TransparentFX
