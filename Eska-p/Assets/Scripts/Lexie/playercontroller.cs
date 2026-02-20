@@ -14,7 +14,7 @@ public class playercontroller : MonoBehaviour
     private Vector3 movementDirection;
     private Vector3 moveVel;
     private Rigidbody rb;
-    private bool onground = true;
+    private bool onground = false;
     private Vector3 velVertical;
     private CharacterController controlador;
     
@@ -64,6 +64,24 @@ public class playercontroller : MonoBehaviour
 
         }
         
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onground = true;
+            Debug.Log("Esta en el suelo");
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onground = false;
+            Debug.Log("Esta en el aire");
+
+        }
     }
 
 }
