@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.InputSystem.XR;
 
 
 public class playercontroller : MonoBehaviour
@@ -10,6 +11,8 @@ public class playercontroller : MonoBehaviour
     [SerializeField] private float fCaida;
     [SerializeField] private float arribaTime;
     [SerializeField] private float velRotacion;
+    private float distance;
+    private int platLayer;
     
 
     private Vector3 movementDirection;
@@ -17,7 +20,9 @@ public class playercontroller : MonoBehaviour
     private Rigidbody rb;
     //private bool onground = false;
     private Vector3 velVertical;
-    private CharacterController controlador;
+    private CharacterController controller;
+    private object player;
+    
     
     
 
@@ -27,7 +32,9 @@ public class playercontroller : MonoBehaviour
     }
     private void Awake()
     {
-        controlador = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
+        controller.detectCollisions = false;
+        
     }
 
     void Update()
@@ -43,13 +50,13 @@ public class playercontroller : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             //this.gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            controlador.Move(transform.forward * speed * Time.deltaTime);
+            controller.Move(transform.forward * speed * Time.deltaTime);
             Debug.Log("Alante");
         }
         if (Input.GetKey(KeyCode.S))
         {
             //this.gameObject.transform.Translate(Vector3.back * speed * Time.deltaTime);
-            controlador.Move(transform.forward * - speed * Time.deltaTime);
+            controller.Move(transform.forward * - speed * Time.deltaTime);
             Debug.Log("Atrás");
         }
         if (Input.GetKey(KeyCode.A))
@@ -62,6 +69,8 @@ public class playercontroller : MonoBehaviour
             this.gameObject.transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
             Debug.Log("Derecha");
         }
+
+        
     }
     
     
