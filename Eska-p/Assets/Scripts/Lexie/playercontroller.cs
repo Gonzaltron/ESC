@@ -33,7 +33,6 @@ public class playercontroller : MonoBehaviour
     void Update()
     {
         MovimientoNormal();
-        //Gravedad();
         //SaltoBombastic();
 
     }
@@ -41,14 +40,6 @@ public class playercontroller : MonoBehaviour
     
     public void MovimientoNormal()
     {
-        //Teclas
-        /*float hor = Input.GetAxis("Horizontal");
-        float ver = Input.GetAxis("Vertical");
-        float sal = Input.GetAxis("Jump");
-
-        movementDirection = new Vector3(hor * speed, sal* speed, ver * speed);
-        transform.position = movementDirection * speed * Time.deltaTime;
-        controlador.Move(movementDirection);*/
         if (Input.GetKey(KeyCode.W))
         {
             //this.gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
@@ -72,39 +63,8 @@ public class playercontroller : MonoBehaviour
             Debug.Log("Derecha");
         }
     }
-    private void Gravedad()
-    {
-        velVertical.y += Gravity * Time.deltaTime;
-        controlador.Move(velVertical * Time.deltaTime);
-    }
-    /*public IEnumerator SaltoBombastic()
-    {
-        
-        if (Input.GetKeyDown(KeyCode.E) && !onground)
-        {
-            yield return new WaitForSeconds(arribaTime);
-            rb.AddForce(Vector3.down * fCaida, ForceMode.Impulse);
-
-        }
-        
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        while (collision.gameObject.CompareTag("Ground"))
-        {
-            onground = true;
-            Debug.Log("Esta en el suelo");
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        while (collision.gameObject.CompareTag("Ground"))
-        {
-            onground = false;
-            Debug.Log("Esta en el aire");
-
-        }
-    }*/
+    
+    
+    
 
 }
