@@ -22,9 +22,7 @@ public class playercontroller : MonoBehaviour
     private Vector3 velVertical;
     private CharacterController controller;
     private object player;
-    
-    
-    
+ 
 
     void Start()
     {
@@ -33,15 +31,11 @@ public class playercontroller : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        controller.detectCollisions = false;
-        
     }
 
     void Update()
     {
         MovimientoNormal();
-        //SaltoBombastic();
-
     }
 
     
@@ -51,29 +45,19 @@ public class playercontroller : MonoBehaviour
         {
             //this.gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
             controller.Move(transform.forward * speed * Time.deltaTime);
-            Debug.Log("Alante");
         }
         if (Input.GetKey(KeyCode.S))
         {
             //this.gameObject.transform.Translate(Vector3.back * speed * Time.deltaTime);
             controller.Move(transform.forward * - speed * Time.deltaTime);
-            Debug.Log("Atrás");
         }
         if (Input.GetKey(KeyCode.A))
         {
             this.gameObject.transform.Rotate(Vector3.down * velRotacion * Time.deltaTime);
-            Debug.Log("Izquierda");
         }
         if (Input.GetKey(KeyCode.D))
         {
             this.gameObject.transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
-            Debug.Log("Derecha");
         }
-
-        
     }
-    
-    
-    
-
 }

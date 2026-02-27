@@ -54,7 +54,7 @@ public class Icono_Accesibilidad : MonoBehaviour
     {
         if (!isAttacking) // Si no está atacando
         {
-            StartCoroutine("Attack"); 
+            StartCoroutine(Attack()); 
         }
     }
 
