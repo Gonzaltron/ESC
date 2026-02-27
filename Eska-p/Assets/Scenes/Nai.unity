@@ -794,7 +794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  Gravity: -7
   fCaida: 5
   arribaTime: 1
   velRotacion: 100

@@ -2,26 +2,19 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.Windows.Speech;
 
 
 public class playercontroller : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float Gravity;
     [SerializeField] private float fCaida;
     [SerializeField] private float arribaTime;
     [SerializeField] private float velRotacion;
-    private float distance;
-    private int platLayer;
-    
-
-    private Vector3 movementDirection;
-    private Vector3 moveVel;
+    [SerializeField] private float Force;
     private Rigidbody rb;
-    //private bool onground = false;
-    private Vector3 velVertical;
     private CharacterController controller;
-    private object player;
+    
  
 
     void Start()
@@ -59,5 +52,17 @@ public class playercontroller : MonoBehaviour
         {
             this.gameObject.transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
         }
+        
+
     }
+
+    public void SaltoBoombastic()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            controller.Move(transform.up * speed * Time.deltaTime);
+
+        }
+    }
+
 }
