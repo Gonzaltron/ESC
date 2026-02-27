@@ -14,6 +14,8 @@ TagManager:
   - Movable
   - Water
   - UI
+  - Wall
+  - Player
   - Suelo
   - 
   - 
