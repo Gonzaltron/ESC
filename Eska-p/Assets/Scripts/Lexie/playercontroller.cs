@@ -8,18 +8,20 @@ using UnityEngine.Windows.Speech;
 public class playercontroller : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float fCaida;
-    [SerializeField] private float arribaTime;
     [SerializeField] private float velRotacion;
-    [SerializeField] private float Force;
-    private Rigidbody rb;
+    [SerializeField] private float jumpHeight;
+    [SerializeField] private float gravedad;
+    [SerializeField] private float velBombastic;
+
     private CharacterController controller;
+    private Vector3 velVertical;
+    
     
  
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        
     }
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class playercontroller : MonoBehaviour
     void Update()
     {
         MovimientoNormal();
+        SaltoBoombastic();
     }
 
     
@@ -52,16 +55,23 @@ public class playercontroller : MonoBehaviour
         {
             this.gameObject.transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
         }
-        
-
+        if (controller.isGrounded)
+        {
+            velVertical.y = -2f;
+            if (Input.GetButtonDown("Jump"))
+            {
+                velVertical.y = jumpHeight;
+            }
+        }
+        velVertical.y += gravedad * Time.deltaTime;
+        controller.Move(velVertical * Time.deltaTime);
     }
 
     public void SaltoBoombastic()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (!controller.isGrounded && Input.GetKeyDown(KeyCode.E))
         {
-            controller.Move(transform.up * speed * Time.deltaTime);
-
+            velVertical.y = -velBombastic;
         }
     }
 
