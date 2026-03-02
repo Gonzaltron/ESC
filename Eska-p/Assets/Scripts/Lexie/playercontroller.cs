@@ -2,31 +2,26 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.Windows.Speech;
 
 
 public class playercontroller : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float Gravity;
-    [SerializeField] private float fCaida;
-    [SerializeField] private float arribaTime;
     [SerializeField] private float velRotacion;
-    private float distance;
-    private int platLayer;
-    
+    [SerializeField] private float jumpHeight;
+    [SerializeField] private float gravedad;
+    [SerializeField] private float velBombastic;
 
-    private Vector3 movementDirection;
-    private Vector3 moveVel;
-    private Rigidbody rb;
-    //private bool onground = false;
-    private Vector3 velVertical;
     private CharacterController controller;
-    private object player;
+    private Vector3 velVertical;
+    
+    
  
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        
     }
     private void Awake()
     {
@@ -36,6 +31,7 @@ public class playercontroller : MonoBehaviour
     void Update()
     {
         MovimientoNormal();
+        SaltoBoombastic();
     }
 
     
@@ -59,5 +55,24 @@ public class playercontroller : MonoBehaviour
         {
             this.gameObject.transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
         }
+        if (controller.isGrounded)
+        {
+            velVertical.y = -2f;
+            if (Input.GetButtonDown("Jump"))
+            {
+                velVertical.y = jumpHeight;
+            }
+        }
+        velVertical.y += gravedad * Time.deltaTime;
+        controller.Move(velVertical * Time.deltaTime);
     }
+
+    public void SaltoBoombastic()
+    {
+        if (!controller.isGrounded && Input.GetKeyDown(KeyCode.E))
+        {
+            velVertical.y = -velBombastic;
+        }
+    }
+
 }
