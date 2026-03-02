@@ -21,8 +21,6 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log(232);
-
         if (!receivingDamage)
         {
             health -= damage; // Se le quita la cantidad de daño a la cantidad de vida

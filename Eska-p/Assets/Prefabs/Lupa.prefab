@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2219863407626874514}
   - component: {fileID: 4269376034164989465}
   - component: {fileID: 7065122651762991411}
-  - component: {fileID: 5002152297412276513}
   - component: {fileID: 2479362902218959545}
   - component: {fileID: 1084078453471324635}
+  - component: {fileID: 7400813010471509656}
   m_Layer: 0
   m_Name: Lupa
   m_TagString: Untagged
@@ -111,23 +111,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: -3.5, z: 0}
---- !u!114 &5002152297412276513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8743066002857522823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a9c787e5d1bbf48a389834c4a9641c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Path: {fileID: 0}
-  m_UpdateMethod: 0
-  m_PositionUnits: 1
-  m_Speed: 5
-  m_Position: 0
 --- !u!54 &2479362902218959545
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -167,3 +150,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6811ebf7fe0fc45bdb7cb48f9f40ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7400813010471509656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8743066002857522823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450f466b666a79a4698f2b19a5c87c03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SplineSettings:
+    Spline: {fileID: 0}
+    Position: 0
+    Units: 0
+  UpdateMethod: 0
+  AutomaticDolly:
+    Enabled: 1
+    Method:
+      rid: 2650302468394319937
+  TrackingTarget: {fileID: 0}
+  m_LegacyPosition: -1
+  m_LegacyUnits: 0
+  m_LegacySpline: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 2650302468394319937
+      type: {class: SplineAutoDolly/FixedSpeed, ns: Unity.Cinemachine, asm: Unity.Cinemachine}
+      data:
+        Speed: 5
