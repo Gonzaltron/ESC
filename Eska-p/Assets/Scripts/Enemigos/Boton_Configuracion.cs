@@ -21,4 +21,5 @@ public class Boton_Configuracion : MonoBehaviour
             collision.gameObject.GetComponent<Player>().TakeDamage(2); // Hace dos de daño al jugador
         }
     }
+
 }

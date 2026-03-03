@@ -12,6 +12,8 @@ public class Icono_Accesibilidad : MonoBehaviour
     public float attackDistance;
     private bool isAttacking;
     public GameObject player;
+    public bool receivingDamage;
+    public int health;
 
     void Awake()
     {
@@ -57,7 +59,18 @@ public class Icono_Accesibilidad : MonoBehaviour
             StartCoroutine(Attack()); 
         }
     }
-
+    public void TakeDamage(int damage)
+    {
+        if (!receivingDamage)
+        {
+            health -= damage; // Se le quita la cantidad de daño a la cantidad de vida
+            if (health <= 0) // Si tiene 0 o menos vida
+            {
+                //Die(); // Llama al método de muerte
+            }
+      
+        }
+    }
     IEnumerator Attack()
     {
         isAttacking = true; // Estado de ataque activado
