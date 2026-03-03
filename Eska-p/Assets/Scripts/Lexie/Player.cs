@@ -1,16 +1,23 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using System.Data;
 
 public class Player : MonoBehaviour
 {
     public int attack = 1;
     public int health = 3;
     private bool receivingDamage = false;
-
+    public GameObject spawn;
+    //private Vector3 respawnLocation;
+    public GameObject player;
+    public bool isDead;
     void Start()
     {
+        //respawnLocation = player.transform.position;
         Time.timeScale = 1f;  // El juego se inciia, esto deberá estar en gamemanager pero por ahora aquí
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -40,7 +47,7 @@ public class Player : MonoBehaviour
     {
         if (receivingDamage)
         {
-            StartCoroutine("Damage");
+            StartCoroutine(Damage());
         }
     }
 
@@ -54,8 +61,10 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        Time.timeScale = 0f;
+        isDead = true;
+        //Time.timeScale = 0f;
     }
+
 
     IEnumerator Damage() // Corrutina para que no pueda recibir daño doble al mismo momento, igual hay que auemntar los segundosen el futuro
     {

@@ -126,6 +126,8 @@ MonoBehaviour:
   speed: 2
   attackDistance: 2
   player: {fileID: 1624319360984318666, guid: 4964953dff287694596463f5ad7eead6, type: 3}
+  receivingDamage: 0
+  health: 1
 --- !u!195 &5326239184748415786
 NavMeshAgent:
   m_ObjectHideFlags: 0
