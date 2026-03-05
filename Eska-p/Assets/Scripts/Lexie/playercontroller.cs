@@ -71,7 +71,7 @@ public class playercontroller : MonoBehaviour
     {
         if (!controller.isGrounded && Input.GetKeyDown(KeyCode.E))
         {
-            velVertical.y = -velBombastic; //////
+            velVertical.y = -velBombastic; 
         }
     }
 
