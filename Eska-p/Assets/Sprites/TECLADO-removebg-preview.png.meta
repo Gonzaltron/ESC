@@ -1,0 +1,738 @@
+fileFormatVersion: 2
+guid: c2fa211953b01ea42bc9afd81ed8e941
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 291
+        width: 39
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497c7cd2a72efe942adb618fca66d1e6
+      internalID: -1292899880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 291
+        width: 54
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9abe44b9baed74994541a9c9669c59
+      internalID: -659231306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 291
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d4e1b974bdedd4a82b2737e2c3839b
+      internalID: 860784797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 291
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1082b3594e89e440bb42aaf702e51bb
+      internalID: -80980592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 291
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca81c3fc041a8f488d3589225baa439
+      internalID: -1015689089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 291
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e9573433cad2a43ba4530fefba762a
+      internalID: 496241637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 291
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd6fc58ea0177e40863fbc37a6a958f
+      internalID: 829546301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 291
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15ef4ba17716fa40b04d4bea8f0fb50
+      internalID: -2023845953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 291
+        width: 37
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1896f00d66255428101b9b9c90c6cf
+      internalID: -248569872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 291
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fb536e21b47f24f87aee00e8873cdb
+      internalID: -1601589252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 242
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c3892c298882904ca1018c14678d20c
+      internalID: 154772714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 243
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf72cc3513988d4586ab546e04d8223
+      internalID: -1151717477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 242
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463a63842697014479469b5c4b31db3e
+      internalID: 1399540833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 242
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb83e07ea0c053479bd31e0c7f02766
+      internalID: -1226381335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 243
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7755cab5bbbbe841b61c27f04431c54
+      internalID: 106065348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 242
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd6efb36f94cc44eb4b436d2488f226
+      internalID: -1564185659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 242
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8594079369fe64448bc07c3fae325ec8
+      internalID: 324148028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 242
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040f04b53c2bdea469b97674aeee91da
+      internalID: 116684695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 242
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e342edd324b15149b2ac5ed14069f96
+      internalID: -4298430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 242
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e3316bb2b1aa749900629e3cf8bade
+      internalID: 1834843600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 193
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41320d39cc72284e9995cded5f2097f
+      internalID: -1043942114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 193
+        width: 37
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ec49582b04a4f40b866de308131345
+      internalID: 996756880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 193
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64d03301a7403940a7a9036ca5dc38b
+      internalID: -1381171005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 194
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cca117fe10758c4fb37f4a022d58023
+      internalID: 444301252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 193
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7f9ce070f73a748a26db21d0abcafc
+      internalID: -444792127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 193
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66cf6c6d64fe57b44893ab5aca598179
+      internalID: 1304448752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TECLADO-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 193
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 754560b400462704486818b000a0cd71
+      internalID: -41588113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 23ddfeea99051d642a5a61cad5c2bdb4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TECLADO-removebg-preview_0: -1292899880
+      TECLADO-removebg-preview_1: -659231306
+      TECLADO-removebg-preview_10: 154772714
+      TECLADO-removebg-preview_11: -1151717477
+      TECLADO-removebg-preview_12: 1399540833
+      TECLADO-removebg-preview_13: -1226381335
+      TECLADO-removebg-preview_14: 106065348
+      TECLADO-removebg-preview_15: -1564185659
+      TECLADO-removebg-preview_16: 324148028
+      TECLADO-removebg-preview_17: 116684695
+      TECLADO-removebg-preview_18: -4298430
+      TECLADO-removebg-preview_19: 1834843600
+      TECLADO-removebg-preview_2: 860784797
+      TECLADO-removebg-preview_20: -1043942114
+      TECLADO-removebg-preview_21: 996756880
+      TECLADO-removebg-preview_22: -1381171005
+      TECLADO-removebg-preview_23: 444301252
+      TECLADO-removebg-preview_24: -444792127
+      TECLADO-removebg-preview_25: 1304448752
+      TECLADO-removebg-preview_26: -41588113
+      TECLADO-removebg-preview_3: -80980592
+      TECLADO-removebg-preview_4: -1015689089
+      TECLADO-removebg-preview_5: 496241637
+      TECLADO-removebg-preview_6: 829546301
+      TECLADO-removebg-preview_7: -2023845953
+      TECLADO-removebg-preview_8: -248569872
+      TECLADO-removebg-preview_9: -1601589252
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
