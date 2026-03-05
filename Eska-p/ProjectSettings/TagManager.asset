@@ -8,6 +8,9 @@ TagManager:
   - Restore
   - Ground
   - spawn
+  - reinicio
+  - configuracion
+  - lupa
   layers:
   - Default
   - TransparentFX

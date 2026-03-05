@@ -57,6 +57,15 @@ public class Player : MonoBehaviour
         {
             health = 3; // La vida se restaura a 3
         }
+        else if (other.gameObject.CompareTag("reinicio"))
+        {
+            TakeDamage(2);
+        }
+        else if (other.gameObject.CompareTag("configuracion") || other.gameObject.CompareTag("lupa"))
+        {
+            TakeDamage(1);
+        }
+        
     }
 
     public void Die()

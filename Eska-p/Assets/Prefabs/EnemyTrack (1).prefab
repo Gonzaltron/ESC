@@ -166,7 +166,6 @@ GameObject:
   - component: {fileID: 2219863407626874514}
   - component: {fileID: 4269376034164989465}
   - component: {fileID: 7065122651762991411}
-  - component: {fileID: 1115146553169255556}
   - component: {fileID: 2479362902218959545}
   - component: {fileID: 4891853013725532516}
   m_Layer: 0
@@ -265,18 +264,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1115146553169255556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8743066002857522823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89dbf0117a4e6f640858a91101324734, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &2479362902218959545
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -358,15 +345,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67d3e4bf687c41e4fa61f86c7f7055cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67d3e4bf687c41e4fa61f86c7f7055cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000003576297
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67d3e4bf687c41e4fa61f86c7f7055cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.499998
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67d3e4bf687c41e4fa61f86c7f7055cc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -561,9 +548,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d3e4bf687c41e4fa61f86c7f7055cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5271757346579835628}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d3e4bf687c41e4fa61f86c7f7055cc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1845814577198614721}
   m_SourcePrefab: {fileID: 100100000, guid: 67d3e4bf687c41e4fa61f86c7f7055cc, type: 3}
 --- !u!4 &1571908770548808073 stripped
 Transform:
@@ -655,15 +639,3 @@ MonoBehaviour:
       type: {class: SplineAutoDolly/FixedSpeed, ns: Unity.Cinemachine, asm: Unity.Cinemachine}
       data:
         Speed: 0.2
---- !u!114 &1845814577198614721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2205455528854922035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6811ebf7fe0fc45bdb7cb48f9f40ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
