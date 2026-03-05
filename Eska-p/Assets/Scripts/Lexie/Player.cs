@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     {
         if (!receivingDamage)
         {
+            receivingDamage = true;
             health -= damage; // Se le quita la cantidad de daño a la cantidad de vida
             if (health <= 0) // Si tiene 0 o menos vida
             {
@@ -37,7 +38,6 @@ public class Player : MonoBehaviour
             }
             else
             {
-                receivingDamage = true;
                 DeactivateDamage();
             }      
         }
