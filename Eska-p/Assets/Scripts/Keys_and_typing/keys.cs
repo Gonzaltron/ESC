@@ -1,9 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class keys : MonoBehaviour
 {
     [SerializeField] char character;
-    [SerializeField] WordManager wordManager;
     bool charSent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +21,7 @@ public class keys : MonoBehaviour
         if (TryGetComponent<Player>(out Player player) && !charSent)
         {
             transform.position = new Vector3 (this.transform.position.x, this.transform.position.y - 0.2f, this.transform.position.z);
-            wordManager.AddChar(character);
+            WordManager.instance.AddChar(character);
             charSent = true;
         }
     }
