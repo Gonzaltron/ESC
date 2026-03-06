@@ -7,11 +7,12 @@ public class SpawnEnemigos : MonoBehaviour
     public GameObject enemy;
     public Transform player;
     public float spawnDistance = 10f; // Distancia desde el jugador
-    public int spawnedEnemies; // El máximo de enemigos que puede haber a la vez
-    public bool isSpawning = false; // Booleano para la corrutina, para que no spawneeen los enemigos a la vez
+    private int spawnedEnemies; // El máximo de enemigos que puede haber a la vez
+    private bool isSpawning = false; // Booleano para la corrutina, para que no spawneeen los enemigos a la vez
 
     void Start()
     {
+        this.gameObject.SetActive(false);
         isSpawning = false;
     }
 
@@ -20,9 +21,9 @@ public class SpawnEnemigos : MonoBehaviour
         if (!isSpawning) // Si no se está spawneando
         {
             StartSpawn(); // Se Llama a la función
+            player.transform.position = transform.position;
         }
     }
-
     public void StartSpawn()
     {
         if (spawnedEnemies < 2) // Si la cantidad de enemigos en pantalla es menor a 2
