@@ -16,14 +16,11 @@ public class keys : MonoBehaviour
     {
         
     }
-    public void OncollisionEnter(Collision collision)
+    
+    public void addCharacter()
     {
-        if (TryGetComponent<Player>(out Player player) && !charSent)
-        {
-            transform.position = new Vector3 (this.transform.position.x, this.transform.position.y - 0.2f, this.transform.position.z);
-            WordManager.instance.AddChar(character);
-            charSent = true;
-        }
+        Debug.Log("manda");
+        WordManager.instance.AddChar(character);
     }
 
     public void OncollisionExit(Collision collision)

@@ -12,16 +12,20 @@ public class playercontroller : MonoBehaviour
     [SerializeField] private float jumpHeight;
     [SerializeField] private float gravedad;
     [SerializeField] private float velBombastic;
+    [SerializeField] float raycastDistance;
+    [SerializeField] bool grounded;
 
     private CharacterController controller;
     private Vector3 velVertical;
-    
+    RaycastHit hit;
+    Vector3 down;
     
  
 
     void Start()
     {
-        
+        down = Vector3.down;
+        raycastDistance = jumpHeight + 0.5f;
     }
     private void Awake()
     {
@@ -31,7 +35,11 @@ public class playercontroller : MonoBehaviour
     void Update()
     {
         MovimientoNormal();
-        SaltoBoombastic();
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            SaltoBoombastic();
+        }
+        grounded = controller.isGrounded;
     }
 
     
@@ -69,9 +77,19 @@ public class playercontroller : MonoBehaviour
 
     public void SaltoBoombastic()
     {
-        if (!controller.isGrounded && Input.GetKeyDown(KeyCode.E))
+        if (!controller.isGrounded)
         {
             velVertical.y = -velBombastic; 
+            Debug.DrawRay(transform.position, down, Color.green);
+            Debug.Log("raycast");
+            if (Physics.Raycast(transform.position, down, out hit, raycastDistance))
+            {
+                if(hit.collider.gameObject.TryGetComponent<keys>(out keys key))
+                {
+                    Debug.Log("hit");
+                    key.addCharacter();
+                }
+            }
         }
     }
 
