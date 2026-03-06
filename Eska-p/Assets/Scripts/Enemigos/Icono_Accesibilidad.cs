@@ -8,9 +8,10 @@ public class Icono_Accesibilidad : MonoBehaviour
     public Transform playerT; // Referencia a player para que lo siga
     public float speed = 2;
     private NavMeshAgent agent; // Referencia del enemigo 
-    private float distance; 
+    private float distance;
     public float attackDistance;
-    private bool isAttacking;
+    public float escapingAttackDistance;
+    private bool isAttacking = false;
     public GameObject player;
     public bool receivingDamage;
     public int health;
@@ -28,7 +29,16 @@ public class Icono_Accesibilidad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Persecution();
+        distance = Vector3.Distance(agent.transform.position, playerT.position);
+        if (!isAttacking)
+        {
+            agent.GetComponent<NavMeshAgent>().enabled = true;
+            Persecution();
+        }
+        if (isAttacking)
+        {
+            StartAttack();
+        }
     }
 
     public void Persecution()
@@ -39,25 +49,21 @@ public class Icono_Accesibilidad : MonoBehaviour
         }
         else
         {
-            distance = Vector3.Distance(agent.transform.position, playerT.position); // La distancia se calcula entre la posicion del transform del enemigo y la posicion del jugador
+             // La distancia se calcula entre la posicion del transform del enemigo y la posicion del jugador
             if (distance < attackDistance) // Si la distancia es menor que la distancia de ataque
             {
-                StartAttack();
+                isAttacking = true;
             }
             else // Si el jugador se aleja
             {
                 isAttacking = false;
-                agent.isStopped = false; // El enemigo se puede volver a mover
                 agent.destination = playerT.position; // El enemigo sigue al jugador
             }
         }
     }
     public void StartAttack()
     {
-        if (!isAttacking) // Si no está atacando
-        {
-            StartCoroutine(Attack()); 
-        }
+        StartCoroutine(Attack());
     }
     public void TakeDamage(int damage)
     {
@@ -68,30 +74,31 @@ public class Icono_Accesibilidad : MonoBehaviour
             {
                 //Die(); // Llama al método de muerte
             }
-      
+
         }
     }
     IEnumerator Attack()
     {
+        agent.GetComponent<NavMeshAgent>().enabled = false;
         isAttacking = true; // Estado de ataque activado
-        agent.isStopped = true; // Se para el enemigo para atacar
         var playerHp = player.GetComponent<Player>(); // Variable llamada playerHp para guardar el script del jugador
-        
-        while (playerHp.health > 0) // Mientras la vida del jugador sea mayor que 0
+
+        if (playerHp.health > 0) // Mientras la vida del jugador sea mayor que 0
         {
-            if (distance > attackDistance) // Si la distancia es mayor que lla distancia de ataque
+            yield return null;
+            if (distance < escapingAttackDistance) // Si la distancia es menor que lla distancia de ataque
             {
-                agent.isStopped = false;
-                break; // Se para la corrutina y no se ataca
-            }
-            else
-            {
-                playerHp.TakeDamage(1); // Llama a la función de takeDamage del script del jugador
+                playerHp.TakeDamage(1); // Llama a la función de takeDamage del script del
                 if (playerHp.health <= 0) // Si la vida es igual o menor a 0
                 {
-                    break; // Se para a la corrutina y no se ataca
+                    StopAllCoroutines();
                 }
-                yield return new WaitForSeconds(3f); // Espera de 3 segundo de ataque en ataque
+                StopAllCoroutines();
+            }
+            else 
+            {
+                Debug.Log("fuera");
+                StopAllCoroutines();
             }
         }
         isAttacking = false; // Como se sale del bucle, el jugador está muerto o fuera de rango así que cambia el estado de ataque a falso     

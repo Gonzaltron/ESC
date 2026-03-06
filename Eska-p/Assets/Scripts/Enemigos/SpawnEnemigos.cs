@@ -26,9 +26,9 @@ public class SpawnEnemigos : MonoBehaviour
     }
     public void StartSpawn()
     {
-        if (spawnedEnemies < 2) // Si la cantidad de enemigos en pantalla es menor a 2
+        if (spawnedEnemies < 3) // Si la cantidad de enemigos en pantalla es menor a 2
         {
-            StartCoroutine("Spawn"); // Se llama a la corrutina para que aparezcan
+            StartCoroutine(Spawn()); // Se llama a la corrutina para que aparezcan
         }
     }
 
@@ -36,7 +36,7 @@ public class SpawnEnemigos : MonoBehaviour
     {
         isSpawning = true; // Se activa ell booleano para que no se esté llamando sin parar la corrutina
         yield return new WaitForSeconds(1f); // Se espera un segundo
-        if (spawnedEnemies < 2) // Se vuelve a comprobar que haya menos de 2 enemigos en pantalla
+        if (spawnedEnemies < 3) // Se vuelve a comprobar que haya menos de 2 enemigos en pantalla
         {
             spawnedEnemies++; // Se suma 1 a la cantidad de enemigos que hay en 
             Vector3 randomDirection = Random.onUnitSphere; // Da un punto aleatorio del radio de una esfera, es decir, no da lejanía sino que hace que pueda aparecer a la izquierda, derecha etc.
