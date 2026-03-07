@@ -25,7 +25,6 @@ public class playercontroller : MonoBehaviour
     void Start()
     {
         down = Vector3.down;
-        raycastDistance = jumpHeight + 0.5f;
     }
     private void Awake()
     {
@@ -76,21 +75,36 @@ public class playercontroller : MonoBehaviour
     }
 
     public void SaltoBoombastic()
+{
+    // ejecutar siempre o cuando estés en el suelo, según el comportamiento deseado
+    if (!controller.isGrounded)
     {
-        if (!controller.isGrounded)
+        // opcional: hacia arriba en lugar de hacia abajo
+        velVertical.y = -velBombastic;
+
+        // dibuja el rayo con longitud para verlo en la escena
+        Debug.DrawRay(transform.position, down, Color.green, 1f);
+        Debug.Log($"SaltoBoombastic fired, grounded={controller.isGrounded}");
+
+        if (Physics.Raycast(transform.position, down, out hit, jumpHeight))
         {
-            velVertical.y = -velBombastic; 
-            Debug.DrawRay(transform.position, down, Color.green);
-            Debug.Log("raycast");
-            if (Physics.Raycast(transform.position, down, out hit, raycastDistance))
+            Debug.Log($"raycast hit {hit.collider.name}");
+            keys key = hit.collider.gameObject.GetComponent<keys>();
+            if (key != null)
             {
-                if(hit.collider.gameObject.TryGetComponent<keys>(out keys key))
-                {
-                    Debug.Log("hit");
-                    key.addCharacter();
-                }
+                Debug.Log("hit key component");
+                key.addCharacter();          // aquí debería aparecer "manda"
+            }
+            else
+            {
+                Debug.Log("No keys component found on collider or parents");
             }
         }
+        else
+        {
+            Debug.Log("raycast missed");
+        }
     }
+}
 
 }
