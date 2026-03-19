@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.Windows.Speech;
+using UnityEngine.InputSystem;
 
 
 public class playercontroller : MonoBehaviour
@@ -12,16 +13,22 @@ public class playercontroller : MonoBehaviour
     [SerializeField] private float jumpHeight;
     [SerializeField] private float gravedad;
     [SerializeField] private float velBombastic;
+    [SerializeField] float raycastDistance;
+    [SerializeField] bool grounded;
 
     private CharacterController controller;
     private Vector3 velVertical;
-    
+    RaycastHit hit;
+    Vector3 down;
+    bool bombastic;
+    float bombasticTime;
     
  
 
     void Start()
     {
-        
+        down = Vector3.down;
+        bombastic = false;
     }
     private void Awake()
     {
@@ -31,7 +38,20 @@ public class playercontroller : MonoBehaviour
     void Update()
     {
         MovimientoNormal();
-        SaltoBoombastic();
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            SaltoBoombastic();
+        }
+        grounded = controller.isGrounded;
+        if(bombastic)
+        {
+            bombasticTime += Time.deltaTime;
+        }
+        if(bombasticTime >= 0.5f)
+        {
+            bombastic = false;
+            bombasticTime = 0;
+        }
     }
 
     
@@ -69,9 +89,21 @@ public class playercontroller : MonoBehaviour
 
     public void SaltoBoombastic()
     {
-        if (!controller.isGrounded && Input.GetKeyDown(KeyCode.E))
+    // ejecutar siempre o cuando estés en el suelo, según el comportamiento deseado
+        if (!controller.isGrounded)
         {
-            velVertical.y = -velBombastic; 
+        // opcional: hacia arriba en lugar de hacia abajo
+            velVertical.y = -velBombastic;
+            bombastic = true;
+
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.TryGetComponent<keys>(out keys key) && bombastic == true)
+        {
+            key.addCharacter();
         }
     }
 
