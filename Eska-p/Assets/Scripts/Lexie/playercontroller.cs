@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.Windows.Speech;
+using UnityEngine.InputSystem;
 
 
 public class playercontroller : MonoBehaviour
@@ -19,12 +20,15 @@ public class playercontroller : MonoBehaviour
     private Vector3 velVertical;
     RaycastHit hit;
     Vector3 down;
+    bool bombastic;
+    float bombasticTime;
     
  
 
     void Start()
     {
         down = Vector3.down;
+        bombastic = false;
     }
     private void Awake()
     {
@@ -39,6 +43,15 @@ public class playercontroller : MonoBehaviour
             SaltoBoombastic();
         }
         grounded = controller.isGrounded;
+        if(bombastic)
+        {
+            bombasticTime += Time.deltaTime;
+        }
+        if(bombasticTime >= 0.5f)
+        {
+            bombastic = false;
+            bombasticTime = 0;
+        }
     }
 
     
@@ -75,36 +88,23 @@ public class playercontroller : MonoBehaviour
     }
 
     public void SaltoBoombastic()
-{
-    // ejecutar siempre o cuando estés en el suelo, según el comportamiento deseado
-    if (!controller.isGrounded)
     {
+    // ejecutar siempre o cuando estés en el suelo, según el comportamiento deseado
+        if (!controller.isGrounded)
+        {
         // opcional: hacia arriba en lugar de hacia abajo
-        velVertical.y = -velBombastic;
+            velVertical.y = -velBombastic;
+            bombastic = true;
 
-        // dibuja el rayo con longitud para verlo en la escena
-        Debug.DrawRay(transform.position, down, Color.green, 1f);
-        Debug.Log($"SaltoBoombastic fired, grounded={controller.isGrounded}");
-
-        if (Physics.Raycast(transform.position, down, out hit, jumpHeight))
-        {
-            Debug.Log($"raycast hit {hit.collider.name}");
-            keys key = hit.collider.gameObject.GetComponent<keys>();
-            if (key != null)
-            {
-                Debug.Log("hit key component");
-                key.addCharacter();          // aquí debería aparecer "manda"
-            }
-            else
-            {
-                Debug.Log("No keys component found on collider or parents");
-            }
-        }
-        else
-        {
-            Debug.Log("raycast missed");
         }
     }
-}
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.TryGetComponent<keys>(out keys key) && bombastic == true)
+        {
+            key.addCharacter();
+        }
+    }
 
 }

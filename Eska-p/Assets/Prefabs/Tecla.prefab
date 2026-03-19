@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3691480901092925372}
   m_Layer: 0
   m_Name: Tecla
-  m_TagString: Untagged
+  m_TagString: Tecla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: 0
-  wordManager: {fileID: 0}
 --- !u!1 &4674641272119547064
 GameObject:
   m_ObjectHideFlags: 0

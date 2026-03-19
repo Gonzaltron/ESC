@@ -64,6 +64,19 @@ public class WordManager : MonoBehaviour
                         CharState.Add(0);
                     }
                 }
+                
+                for(int j = 0; i<CharState.Count; i++)
+                {
+                    if(CharState[j] != 1)
+                    {
+                        deleteList();
+                    }
+                }
+                if(CharState.Count != null)
+                {
+                    //abre la puerta
+                }
+                deleteList();
             }
             else if(phase == 1)
             {
@@ -82,6 +95,19 @@ public class WordManager : MonoBehaviour
                         CharState.Add(0);
                     }
                 }
+
+                for(int j = 0; i<CharState.Count; i++)
+                {
+                    if(CharState[j] != 1)
+                    {
+                        deleteList();
+                    }
+                }
+                if(CharState.Count != null)
+                {
+                    //abre la puerta
+                }
+                deleteList();
             }
             else if(phase == 2)
             {
@@ -100,6 +126,18 @@ public class WordManager : MonoBehaviour
                         CharState.Add(0);
                     }
                 }
+                for(int j = 0; i<CharState.Count; i++)
+                {
+                    if(CharState[j] != 1)
+                    {
+                        deleteList();
+                    }
+                }
+                if(CharState.Count != null)
+                {
+                    //abre la puerta
+                }
+                deleteList();
             }
             else if(phase == 3)
             {
@@ -118,8 +156,19 @@ public class WordManager : MonoBehaviour
                         CharState.Add(0);
                     }
                 }
+                for(int j = 0; i<CharState.Count; i++)
+                {
+                    if(CharState[j] != 1)
+                    {
+                        deleteList();
+                    }
+                }
+                if(CharState.Count != null)
+                {
+                    //abre la puerta
+                }
+                deleteList();
             }
-            deleteList();
         }
     }
 

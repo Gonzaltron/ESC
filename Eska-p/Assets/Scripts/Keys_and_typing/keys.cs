@@ -4,11 +4,12 @@ using UnityEngine;
 public class keys : MonoBehaviour
 {
     [SerializeField] char character;
+    WordManager wordManager;
     bool charSent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        wordManager = MonoBehaviour.FindFirstObjectByType<WordManager>();
     }
 
     // Update is called once per frame
@@ -20,7 +21,7 @@ public class keys : MonoBehaviour
     public void addCharacter()
     {
         Debug.Log("manda");
-        WordManager.instance.AddChar(character);
+        wordManager.AddChar(character);
     }
 
     public void OncollisionExit(Collision collision)
