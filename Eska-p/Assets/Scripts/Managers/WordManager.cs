@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WordManager : MonoBehaviour
@@ -7,10 +8,12 @@ public class WordManager : MonoBehaviour
     [SerializeField] List<char> CorrectWord;
     [SerializeField] GameObject door;
     [SerializeField] List<int>CharState;
+    [SerializeField] List <TextMeshProUGUI> charWall;
+    int index;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        index = 0;
     }
 
     // Update is called once per frame
@@ -22,6 +25,8 @@ public class WordManager : MonoBehaviour
     public void AddChar(char character)
     {
         word.Add(character);
+        charWall[index].text = character.ToString();
+        index ++;
         if(word.Count == CorrectWord.Count)
         {
             CheckLetra();
@@ -55,7 +60,7 @@ public class WordManager : MonoBehaviour
                         deleteList();
                     }
                 }
-                if(CharState.Count != null)
+                if(CharState.Count == CorrectWord.Count)
                 {
                     door.SetActive(false);
                 }
@@ -68,5 +73,10 @@ public class WordManager : MonoBehaviour
     {
         word.Clear();
         CharState.Clear();
+        for(int i = 0; i < charWall.Count; i++)
+        {
+            charWall[i].text = " ";
+        }
+        index = 0;
     }
 }
