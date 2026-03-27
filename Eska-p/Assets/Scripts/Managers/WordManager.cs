@@ -8,8 +8,12 @@ public class WordManager : MonoBehaviour
     [SerializeField] List<char> CorrectWord2;
     [SerializeField] List<char> CorrectWord3;
     [SerializeField] List<char> CorrectWord4;
+    [SerializeField] GameObject door1;
+    [SerializeField] GameObject door2;
+    [SerializeField] GameObject door3;
+    [SerializeField] GameObject door4;
     public static WordManager instance;
-    List<int>CharState;
+    [SerializeField] List<int>CharState;
     int phase;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,6 +49,7 @@ public class WordManager : MonoBehaviour
     }
     public void CheckLetra()
     {
+        Debug.LogWarning("Entra");
         for (int i = 0; i< word.Count+1; i++)
         {
             if(phase == 0)
@@ -74,7 +79,7 @@ public class WordManager : MonoBehaviour
                 }
                 if(CharState.Count != null)
                 {
-                    //abre la puerta
+                    door1.SetActive(false);
                 }
                 deleteList();
             }
@@ -105,7 +110,7 @@ public class WordManager : MonoBehaviour
                 }
                 if(CharState.Count != null)
                 {
-                    //abre la puerta
+                    door2.SetActive(false);
                 }
                 deleteList();
             }
@@ -135,7 +140,7 @@ public class WordManager : MonoBehaviour
                 }
                 if(CharState.Count != null)
                 {
-                    //abre la puerta
+                    door3.SetActive(false);
                 }
                 deleteList();
             }
@@ -165,7 +170,7 @@ public class WordManager : MonoBehaviour
                 }
                 if(CharState.Count != null)
                 {
-                    //abre la puerta
+                    door4.SetActive(false);
                 }
                 deleteList();
             }
