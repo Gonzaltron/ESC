@@ -73,8 +73,6 @@ public class Player : MonoBehaviour
         isDead = true;
         //Time.timeScale = 0f;
     }
-
-
     IEnumerator Damage() // Corrutina para que no pueda recibir daño doble al mismo momento, igual hay que auemntar los segundosen el futuro
     {
         yield return new WaitForSeconds(1f); 

@@ -9,17 +9,13 @@ public class Spawn : MonoBehaviour
     {
         spawn = GameObject.FindGameObjectWithTag("spawn");
         SpawnPlayerFirstTime();
-
     }
     public void SpawnPlayerFirstTime()
     {
-        GameObject.Instantiate(player, spawn.transform.position, Quaternion.identity);
+        player = Instantiate(player, spawn.transform.position, Quaternion.identity);
     }
 
-    public void NewSpawn()
-    {
-    
-    }
+   
     // Update is called once per frame
     void Update()
     {
