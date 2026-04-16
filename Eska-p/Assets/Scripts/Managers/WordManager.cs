@@ -9,7 +9,13 @@ public class WordManager : MonoBehaviour
     [SerializeField] GameObject door;
     [SerializeField] List<int>CharState;
     [SerializeField] List <TextMeshProUGUI> charWall;
+    [SerializeField] List <GameObject> charWallObj;
+    [SerializeField] Material correct;
+    [SerializeField] Material wrong;
+    [SerializeField] Material wrongPlace;
+    [SerializeField] Material defaultMat;
     int index;
+    int correctAmount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +30,10 @@ public class WordManager : MonoBehaviour
 
     public void AddChar(char character)
     {
+        if(word.Count == CorrectWord.Count)
+        {
+            deleteList();
+        }
         word.Add(character);
         charWall[index].text = character.ToString();
         index ++;
@@ -42,29 +52,32 @@ public class WordManager : MonoBehaviour
                     if(word[i] == CorrectWord[j] && i == j)
                     {
                         CharState.Add(1);
+                        correctAmount ++;
+                        charWallObj[i].GetComponent<MeshRenderer>().material = correct;
+                        break;
                     }
                     else if(word[i] == CorrectWord[j] && i != j)
                     {
-                        CharState.Add(2);
+                        if(charWallObj[i].GetComponent<MeshRenderer>().material != correct)
+                        {
+                            CharState.Add(2);
+                            charWallObj[i].GetComponent<MeshRenderer>().material = wrongPlace;
+                            break;
+                        }
                     }
                     else
                     {
-                        CharState.Add(0);
+                        if(charWallObj[i].GetComponent<MeshRenderer>().material != correct && charWallObj[i].GetComponent<MeshRenderer>().material != wrongPlace)
+                        {
+                            CharState.Add(0);
+                            charWallObj[i].GetComponent<MeshRenderer>().material = wrong;
+                        }
                     }
                 }
-                
-                for(int j = 0; i<CharState.Count; i++)
-                {
-                    if(CharState[j] != 1)
-                    {
-                        deleteList();
-                    }
-                }
-                if(CharState.Count == CorrectWord.Count)
+                if(correctAmount == CorrectWord.Count)
                 {
                     door.SetActive(false);
                 }
-                deleteList();
             
         }
     }
@@ -76,7 +89,9 @@ public class WordManager : MonoBehaviour
         for(int i = 0; i < charWall.Count; i++)
         {
             charWall[i].text = " ";
+            charWallObj[i].GetComponent<MeshRenderer>().material = defaultMat;
         }
         index = 0;
+        correctAmount = 0;
     }
 }
