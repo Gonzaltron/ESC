@@ -11,6 +11,10 @@ public class InkManager : MonoBehaviour
     public GameObject dialoguePanel;
     public static InkManager Instance;
     private Story story;
+    private Coroutine typingCoroutine;
+    public bool isTyping;
+    private float dialogueSpeed = 0.05f;
+    private string currentLine;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -25,25 +29,52 @@ public class InkManager : MonoBehaviour
     public void StartDialogue(string knotName)
     {
         story.ChoosePathString(knotName);
-       
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
         ContinueStory();
     }
-
     public void ContinueStory()
     {
         if (story.canContinue)
         {
             Time.timeScale = 0f;
             dialoguePanel.SetActive(true);
-            dialogueText.text = story.Continue();
-            
+            string text = story.Continue();
+            currentLine = text;
+            typingCoroutine = StartCoroutine(WriteLine(text));
+
         }
     }
+    public void AutomaticDialogue()
+    {
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine);
 
+        dialogueText.text = currentLine;
+        isTyping = false;
+
+    }
+ 
     public void EndDialogue()
     {
         Debug.Log("a");
         dialoguePanel.SetActive(false);
         Time.timeScale = 1.0f;
     }
+    private IEnumerator WriteLine(string text)
+    {
+        isTyping = true;
+        dialogueText.text = "";
+
+        foreach (char letter in text)
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSecondsRealtime(dialogueSpeed);
+        }
+
+        isTyping = false;
+    }
+
 }
