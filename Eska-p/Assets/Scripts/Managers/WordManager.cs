@@ -1,20 +1,25 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WordManager : MonoBehaviour
 {
     [SerializeField] List<char> word;
-    [SerializeField] List<char> CorrectWord1;
-    [SerializeField] List<char> CorrectWord2;
-    [SerializeField] List<char> CorrectWord3;
-    [SerializeField] List<char> CorrectWord4;
-    public static WordManager instance;
-    List<int>CharState;
-    int phase;
+    [SerializeField] List<char> CorrectWord;
+    [SerializeField] GameObject door;
+    [SerializeField] List<int>CharState;
+    [SerializeField] List <TextMeshProUGUI> charWall;
+    [SerializeField] List <GameObject> charWallObj;
+    [SerializeField] Material correct;
+    [SerializeField] Material wrong;
+    [SerializeField] Material wrongPlace;
+    [SerializeField] Material defaultMat;
+    int index;
+    int correctAmount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        phase = 0;
+        index = 0;
     }
 
     // Update is called once per frame
@@ -25,20 +30,14 @@ public class WordManager : MonoBehaviour
 
     public void AddChar(char character)
     {
+        if(word.Count == CorrectWord.Count)
+        {
+            deleteList();
+        }
         word.Add(character);
-        if(word.Count == CorrectWord1.Count && phase == 0)
-        {
-            CheckLetra();
-        }
-        else if(word.Count == CorrectWord1.Count && phase == 1)
-        {
-            CheckLetra();
-        }
-        else if(word.Count == CorrectWord1.Count && phase == 2)
-        {
-            CheckLetra();
-        }
-        else if(word.Count == CorrectWord1.Count && phase == 3)
+        charWall[index].text = character.ToString();
+        index ++;
+        if(word.Count == CorrectWord.Count)
         {
             CheckLetra();
         }
@@ -47,128 +46,39 @@ public class WordManager : MonoBehaviour
     {
         for (int i = 0; i< word.Count+1; i++)
         {
-            if(phase == 0)
-            {
-                for(int j = 0; j< CorrectWord1.Count; j++)
+            
+                for(int j = 0; j< CorrectWord.Count; j++)
                 {
-                    if(word[i] == CorrectWord1[j] && i == j)
+                    if(word[i] == CorrectWord[j] && i == j)
                     {
                         CharState.Add(1);
+                        correctAmount ++;
+                        charWallObj[i].GetComponent<MeshRenderer>().material = correct;
+                        break;
                     }
-                    else if(word[i] == CorrectWord1[j] && i != j)
+                    else if(word[i] == CorrectWord[j] && i != j)
                     {
-                        CharState.Add(2);
+                        if(charWallObj[i].GetComponent<MeshRenderer>().material != correct)
+                        {
+                            CharState.Add(2);
+                            charWallObj[i].GetComponent<MeshRenderer>().material = wrongPlace;
+                            break;
+                        }
                     }
                     else
                     {
-                        CharState.Add(0);
+                        if(charWallObj[i].GetComponent<MeshRenderer>().material != correct && charWallObj[i].GetComponent<MeshRenderer>().material != wrongPlace)
+                        {
+                            CharState.Add(0);
+                            charWallObj[i].GetComponent<MeshRenderer>().material = wrong;
+                        }
                     }
                 }
-                
-                for(int j = 0; i<CharState.Count; i++)
+                if(correctAmount == CorrectWord.Count)
                 {
-                    if(CharState[j] != 1)
-                    {
-                        deleteList();
-                    }
+                    door.SetActive(false);
                 }
-                if(CharState.Count != null)
-                {
-                    //abre la puerta
-                }
-                deleteList();
-            }
-            else if(phase == 1)
-            {
-                for(int j = 0; j< CorrectWord2.Count; j++)
-                {
-                    if(word[i] == CorrectWord2[j] && i == j)
-                    {
-                        CharState.Add(1);
-                    }
-                    else if(word[i] == CorrectWord2[j] && i != j)
-                    {
-                        CharState.Add(2);
-                    }
-                    else
-                    {
-                        CharState.Add(0);
-                    }
-                }
-
-                for(int j = 0; i<CharState.Count; i++)
-                {
-                    if(CharState[j] != 1)
-                    {
-                        deleteList();
-                    }
-                }
-                if(CharState.Count != null)
-                {
-                    //abre la puerta
-                }
-                deleteList();
-            }
-            else if(phase == 2)
-            {
-                for(int j = 0; j< CorrectWord3.Count; j++)
-                {
-                    if(word[i] == CorrectWord3[j] && i == j)
-                    {
-                        CharState.Add(1);
-                    }
-                    else if(word[i] == CorrectWord3[j] && i != j)
-                    {
-                        CharState.Add(2);
-                    }
-                    else
-                    {
-                        CharState.Add(0);
-                    }
-                }
-                for(int j = 0; i<CharState.Count; i++)
-                {
-                    if(CharState[j] != 1)
-                    {
-                        deleteList();
-                    }
-                }
-                if(CharState.Count != null)
-                {
-                    //abre la puerta
-                }
-                deleteList();
-            }
-            else if(phase == 3)
-            {
-                for(int j = 0; j< CorrectWord4.Count; j++)
-                {
-                    if(word[i] == CorrectWord4[j] && i == j)
-                    {
-                        CharState.Add(1);
-                    }
-                    else if(word[i] == CorrectWord4[j] && i != j)
-                    {
-                        CharState.Add(2);
-                    }
-                    else
-                    {
-                        CharState.Add(0);
-                    }
-                }
-                for(int j = 0; i<CharState.Count; i++)
-                {
-                    if(CharState[j] != 1)
-                    {
-                        deleteList();
-                    }
-                }
-                if(CharState.Count != null)
-                {
-                    //abre la puerta
-                }
-                deleteList();
-            }
+            
         }
     }
 
@@ -176,5 +86,12 @@ public class WordManager : MonoBehaviour
     {
         word.Clear();
         CharState.Clear();
+        for(int i = 0; i < charWall.Count; i++)
+        {
+            charWall[i].text = " ";
+            charWallObj[i].GetComponent<MeshRenderer>().material = defaultMat;
+        }
+        index = 0;
+        correctAmount = 0;
     }
 }

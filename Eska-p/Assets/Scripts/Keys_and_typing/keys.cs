@@ -4,12 +4,12 @@ using UnityEngine;
 public class keys : MonoBehaviour
 {
     [SerializeField] char character;
-    WordManager wordManager;
+    [SerializeField] WordManager wordManager;
     bool charSent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        wordManager = MonoBehaviour.FindFirstObjectByType<WordManager>();
+        
     }
 
     // Update is called once per frame
