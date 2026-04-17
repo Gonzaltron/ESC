@@ -10987,7 +10987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   word: 
-  CorrectWord: 500052004f00430045005300410044004f005200
+  CorrectWord: 560045004e00540049004c00410044004f005200
   door: {fileID: 1383055232}
   CharState: 
   charWall:
@@ -11368,7 +11368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -35.90547}
+  m_AnchoredPosition: {x: 0, y: -35.905487}
   m_SizeDelta: {x: -263.32, y: -287.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1481538463
