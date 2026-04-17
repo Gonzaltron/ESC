@@ -33,7 +33,6 @@ public class Spawn : MonoBehaviour
 
     public void Respawn()
     {
-        Debug.Log("respawn");
         player.transform.position = lastCheckpoint;
     }
 

@@ -59,7 +59,6 @@ public class InkManager : MonoBehaviour
  
     public void EndDialogue()
     {
-        Debug.Log("a");
         dialoguePanel.SetActive(false);
         Time.timeScale = 1.0f;
     }

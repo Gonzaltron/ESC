@@ -21,13 +21,11 @@ public class EnemyManager : MonoBehaviour
         {
             spawnEnemigos.SetActive(true);
             isActive = true;
-            Debug.Log("activado");
         }
         else if (other.gameObject.CompareTag("player") && isActive)
         {
             spawnEnemigos.SetActive(false);
             isActive = false;
-            Debug.Log("desactivad");
         }
     }
 }

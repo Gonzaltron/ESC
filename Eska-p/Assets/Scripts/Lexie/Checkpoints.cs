@@ -16,7 +16,6 @@ public class Checkpoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(lexi.GetComponent<Player>().isDead);
         NextSpawn();
     }
     public void OnTriggerEnter(Collider other)
