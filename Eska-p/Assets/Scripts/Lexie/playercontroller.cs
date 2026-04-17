@@ -47,7 +47,7 @@ public class playercontroller : MonoBehaviour
         {
             bombasticTime += Time.deltaTime;
         }
-        if(bombasticTime >= 0.5f)
+        if(bombasticTime >= 0.5f) 
         {
             bombastic = false;
             bombasticTime = 0;

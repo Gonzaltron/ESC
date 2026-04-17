@@ -11,7 +11,7 @@ public class keys : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        mandado = false;
     }
 
     // Update is called once per frame
@@ -21,6 +21,12 @@ public class keys : MonoBehaviour
         {
             coolMandado += Time.deltaTime;
         }
+        if (coolMandado >= 0.5f)
+        {
+            mandado = false;
+            Debug.Log(mandado);
+            Debug.Log("mandado2");
+        }
     }
     
     public void addCharacter()
@@ -29,11 +35,11 @@ public class keys : MonoBehaviour
         {
             wordManager.AddChar(character);
             mandado = true;
+            Debug.Log(mandado);
+            Debug.Log("mandado");
+
         }
-        if(coolMandado >= 0.5f)
-        {
-            mandado = false;
-        }
+       
     }
 
     public void OncollisionExit(Collision collision)
