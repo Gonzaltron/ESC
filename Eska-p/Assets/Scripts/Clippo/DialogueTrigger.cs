@@ -16,6 +16,7 @@ public class DialogueTrigger : MonoBehaviour
 
             clippo.SetActive(true); 
             inkManager.StartDialogue(knotName);
+            Spawn.Instance.SetCheckpoint(transform.position);
         }
     }
 }

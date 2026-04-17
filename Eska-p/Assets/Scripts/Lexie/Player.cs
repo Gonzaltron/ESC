@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         isDead = true;
-        //Time.timeScale = 0f;
+        Spawn.Instance.Respawn();
     }
     IEnumerator Damage() // Corrutina para que no pueda recibir daño doble al mismo momento, igual hay que auemntar los segundosen el futuro
     {

@@ -30,7 +30,6 @@ public class Checkpoints : MonoBehaviour
     {
         if (lexi.GetComponent<Player>().isDead == true)
         {
-            Debug.Log("AA");
             player.transform.position = spawnPosition;
         }
     }
