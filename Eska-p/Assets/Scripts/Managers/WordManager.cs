@@ -44,40 +44,40 @@ public class WordManager : MonoBehaviour
     }
     public void CheckLetra()
     {
-        for (int i = 0; i< word.Count+1; i++)
+        for (int i = 0; i< word.Count; i++)
         {
             
-                for(int j = 0; j< CorrectWord.Count; j++)
+            for(int j = 0; j< CorrectWord.Count; j++)
+            {
+                if(word[i] == CorrectWord[j] && i == j)
                 {
-                    if(word[i] == CorrectWord[j] && i == j)
+                    CharState.Add(1);
+                    correctAmount ++;
+                    charWallObj[i].GetComponent<MeshRenderer>().material = correct;
+                    break;
+                }
+                else if(word[i] == CorrectWord[j] && i != j)
+                {
+                    if(charWallObj[i].GetComponent<MeshRenderer>().material != correct)
                     {
-                        CharState.Add(1);
-                        correctAmount ++;
-                        charWallObj[i].GetComponent<MeshRenderer>().material = correct;
+                        CharState.Add(2);
+                        charWallObj[i].GetComponent<MeshRenderer>().material = wrongPlace;
                         break;
                     }
-                    else if(word[i] == CorrectWord[j] && i != j)
-                    {
-                        if(charWallObj[i].GetComponent<MeshRenderer>().material != correct)
-                        {
-                            CharState.Add(2);
-                            charWallObj[i].GetComponent<MeshRenderer>().material = wrongPlace;
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        if(charWallObj[i].GetComponent<MeshRenderer>().material != correct && charWallObj[i].GetComponent<MeshRenderer>().material != wrongPlace)
-                        {
-                            CharState.Add(0);
-                            charWallObj[i].GetComponent<MeshRenderer>().material = wrong;
-                        }
-                    }
                 }
-                if(correctAmount == CorrectWord.Count)
+                else
                 {
-                    door.SetActive(false);
+                    if(charWallObj[i].GetComponent<MeshRenderer>().material != correct && charWallObj[i].GetComponent<MeshRenderer>().material != wrongPlace)
+                    {
+                        CharState.Add(0);
+                        charWallObj[i].GetComponent<MeshRenderer>().material = wrong;
+                    }
                 }
+            }
+            if(correctAmount == CorrectWord.Count)
+            {
+                door.SetActive(false);
+            }
             
         }
     }
