@@ -104,6 +104,9 @@ public class playercontroller : MonoBehaviour
         if(other.TryGetComponent<keys>(out keys key) && bombastic == true)
         {
             key.addCharacter();
+            bombastic = false;
+            bombasticTime = 0;
+
         }
     }
 

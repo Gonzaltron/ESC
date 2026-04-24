@@ -17,25 +17,23 @@ public class keys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(mandado)
-        {
-            coolMandado += Time.deltaTime;
-        }
-        if (coolMandado >= 0.6f)
-        {
-            mandado = false;
-            Debug.Log(mandado);
-            Debug.Log("mandado2");
-        }
+        //if(mandado)
+        //{
+        //    coolMandado += Time.deltaTime;
+        //}
+        //if (coolMandado >= 0.6f)
+        //{
+        //    mandado = false;
+        //}
     }
     
     public void addCharacter()
     {
-        if(!mandado)
-        {
+        //if(!mandado)
+        //{
             wordManager.AddChar(character);
-            mandado = true;
-        }
+            //mandado = true;
+        //}
        
     }
 
