@@ -15,6 +15,7 @@ public class playercontroller : MonoBehaviour
     [SerializeField] private float velBombastic;
     [SerializeField] float raycastDistance;
     [SerializeField] bool grounded;
+    [SerializeField] CollisionForTyping childCollision;
 
     private CharacterController controller;
     private Vector3 velVertical;
@@ -99,15 +100,24 @@ public class playercontroller : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    public void SendChar(GameObject obj)
     {
-        if(other.TryGetComponent<keys>(out keys key) && bombastic == true)
+       if(obj.TryGetComponent<keys>(out keys key) && bombastic == true)
         {
             key.addCharacter();
             bombastic = false;
             bombasticTime = 0;
-
-        }
+        } 
     }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.TryGetComponent<keys>(out keys key) && bombastic == true)
+    //    {
+    //        key.addCharacter();
+    //        bombastic = false;
+    //        bombasticTime = 0;
+//
+    //    }
+    //}
 
 }
