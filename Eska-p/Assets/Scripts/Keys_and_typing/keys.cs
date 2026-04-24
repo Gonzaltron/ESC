@@ -21,7 +21,7 @@ public class keys : MonoBehaviour
         {
             coolMandado += Time.deltaTime;
         }
-        if (coolMandado >= 0.5f)
+        if (coolMandado >= 0.6f)
         {
             mandado = false;
             Debug.Log(mandado);
@@ -35,9 +35,6 @@ public class keys : MonoBehaviour
         {
             wordManager.AddChar(character);
             mandado = true;
-            Debug.Log(mandado);
-            Debug.Log("mandado");
-
         }
        
     }
