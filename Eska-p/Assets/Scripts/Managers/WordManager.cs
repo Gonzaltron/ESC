@@ -62,7 +62,6 @@ public class WordManager : MonoBehaviour
                     {
                         CharState.Add(2);
                         charWallObj[i].GetComponent<MeshRenderer>().material = wrongPlace;
-                        break;
                     }
                 }
                 else
