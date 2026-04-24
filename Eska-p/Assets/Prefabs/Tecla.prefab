@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: 0
+  wordManager: {fileID: 0}
 --- !u!1 &4674641272119547064
 GameObject:
   m_ObjectHideFlags: 0

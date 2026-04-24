@@ -97,7 +97,6 @@ public class Icono_Accesibilidad : MonoBehaviour
             }
             else 
             {
-                Debug.Log("fuera");
                 StopAllCoroutines();
             }
         }

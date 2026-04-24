@@ -72,6 +72,9 @@ public class Player : MonoBehaviour
     {
         isDead = true;
         Spawn.Instance.Respawn();
+        health = 3;
+        isDead = false;
+        receivingDamage = false;
     }
     IEnumerator Damage() // Corrutina para que no pueda recibir daño doble al mismo momento, igual hay que auemntar los segundosen el futuro
     {

@@ -18,7 +18,7 @@ public class playercontroller : MonoBehaviour
     [SerializeField] CollisionForTyping childCollision;
 
     private CharacterController controller;
-    private Vector3 velVertical;
+    public Vector3 velVertical;
     RaycastHit hit;
     Vector3 down;
     bool bombastic;
@@ -55,18 +55,21 @@ public class playercontroller : MonoBehaviour
         }
     }
 
-    
+    public Vector3 horizontalVelocity ;
     public void MovimientoNormal()
     {
+        horizontalVelocity = Vector3.zero;
         if (Input.GetKey(KeyCode.W))
         {
+            horizontalVelocity += (transform.forward * speed);
             //this.gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            controller.Move(transform.forward * speed * Time.deltaTime);
+            //controller.Move(transform.forward * speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.S))
         {
             //this.gameObject.transform.Translate(Vector3.back * speed * Time.deltaTime);
-            controller.Move(transform.forward * - speed * Time.deltaTime);
+            //controller.Move(transform.forward * - speed * Time.deltaTime);
+            horizontalVelocity -= (transform.forward * speed);
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -76,6 +79,7 @@ public class playercontroller : MonoBehaviour
         {
             this.gameObject.transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
         }
+
         if (controller.isGrounded)
         {
             velVertical.y = -2f;
@@ -84,8 +88,10 @@ public class playercontroller : MonoBehaviour
                 velVertical.y = jumpHeight;
             }
         }
+
         velVertical.y += gravedad * Time.deltaTime;
-        controller.Move(velVertical * Time.deltaTime);
+
+        controller.Move((horizontalVelocity + velVertical) * Time.deltaTime);
     }
 
     public void SaltoBoombastic()
