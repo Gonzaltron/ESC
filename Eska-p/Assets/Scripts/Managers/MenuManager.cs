@@ -28,4 +28,9 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Volver()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
