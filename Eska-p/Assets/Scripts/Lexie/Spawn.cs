@@ -6,7 +6,7 @@ public class Spawn : MonoBehaviour
     public GameObject spawn;
     public GameObject player;
     public static Spawn Instance;
-    private Vector3 lastCheckpoint;
+   [SerializeField] private Vector3 lastCheckpoint;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
