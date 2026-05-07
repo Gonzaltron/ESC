@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using System.Data;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -17,15 +19,23 @@ public class Player : MonoBehaviour
     GameObject room2;
     GameObject room3;
     GameObject room4;
+    TMP_Text healthText;
+    TMP_Text respawnText;
+    int respawnCount;
     void Start()
     {
         //respawnLocation = player.transform.position;
         Time.timeScale = 1f;  // El juego se inciia, esto deber� estar en gamemanager pero por ahora aqu�
         isDead = false;
+        respawnCount = 2;
         room1 = GameObject.Find("Level1");
         room2 = GameObject.Find("Level2");
         room3 = GameObject.Find("Level3");
         room4 = GameObject.Find("Level4");
+        healthText = GameObject.Find("Vida").GetComponent<TMP_Text>();
+        respawnText = GameObject.Find("Reapariciones").GetComponent<TMP_Text>();
+        healthText.text = "Vida: " + health.ToString() + "/3";
+        respawnText.text = "Reapariciones restantes: " + respawnCount.ToString() + "/2";
     }
 
     // Update is called once per frame
@@ -40,6 +50,7 @@ public class Player : MonoBehaviour
         receivingDamage = true;
 
         health -= damage; // Se le quita la cantidad de da�o a la cantidad de vida
+        healthText.text = "Vida: " + health.ToString() + "/3";
 
         if (health <= 0)// Si tiene 0 o menos vida
         {
@@ -80,9 +91,16 @@ public class Player : MonoBehaviour
     public void Die()
     {
         health = 3;
+        healthText.text = "Vida: " + health.ToString() + "/3";
         Spawn.Instance.Respawn();
         receivingDamage = true;
         StartCoroutine(Damage());
+        if(respawnCount <= 0)
+        {
+            SceneManager.LoadScene("Derrota");
+        }
+        respawnCount--;
+        respawnText.text = "Reapariciones restantes: " + respawnCount.ToString() + "/2";
     }
     IEnumerator Damage() // Corrutina para que no pueda recibir da�o doble al mismo momento, igual hay que auemntar los segundosen el futuro
     {
