@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2364614227171598805}
   - component: {fileID: 8740980276932484181}
   - component: {fileID: 3691480901092925372}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tecla
   m_TagString: Tecla
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058642244956485182}
   - component: {fileID: 9086025132870659613}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
