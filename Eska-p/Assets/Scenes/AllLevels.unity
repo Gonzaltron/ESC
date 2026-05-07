@@ -3536,7 +3536,7 @@ GameObject:
   - component: {fileID: 267483810}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: lupa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4021,7 +4021,7 @@ GameObject:
   - component: {fileID: 374983459}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: lupa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5606,7 +5606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8601810845341403854, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -47.887146
+      value: -47.887207
       objectReference: {fileID: 0}
     - target: {fileID: 8601810845341403854, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8305,7 +8305,7 @@ GameObject:
   - component: {fileID: 963488940}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: lupa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10722,7 +10722,7 @@ GameObject:
   - component: {fileID: 1278296731}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: lupa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
