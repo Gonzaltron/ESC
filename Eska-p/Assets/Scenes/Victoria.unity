@@ -869,7 +869,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1HAS CONSEGUIDO VENCER A TU ORDENADOR!"
+  m_text: "\xA1HAS CONSEGUIDO VENCER A TU ORDENADOR! :)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 545f71a8e05cc5d468a8ea8e10cb55e5, type: 2}
   m_sharedMaterial: {fileID: -6660190227301002903, guid: 545f71a8e05cc5d468a8ea8e10cb55e5, type: 2}
