@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 03ca1e7fe88309548a0a742e1bc8a2d6
+  - enabled: 1
+    path: Assets/Scenes/Victoria.unity
+    guid: 72e8fb47d933ad147b82f8a84ccfc55e
+  - enabled: 1
+    path: Assets/Scenes/Derrota.unity
+    guid: aa3c7323c48b6624680578daf8aea912
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

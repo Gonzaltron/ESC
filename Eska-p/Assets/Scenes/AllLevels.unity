@@ -9432,6 +9432,7 @@ MonoBehaviour:
   knotName: level3
   inkManager: {fileID: 1932021553}
   clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
+  player: {fileID: 0}
 --- !u!65 &1098162818
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11865,6 +11866,7 @@ MonoBehaviour:
   knotName: final
   inkManager: {fileID: 1932021553}
   clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
+  player: {fileID: 0}
 --- !u!1001 &1343571831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14278,6 +14280,7 @@ MonoBehaviour:
   knotName: level2
   inkManager: {fileID: 1932021553}
   clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
+  player: {fileID: 0}
 --- !u!1001 &1587258471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17418,6 +17421,7 @@ MonoBehaviour:
   knotName: level1
   inkManager: {fileID: 1932021553}
   clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
+  player: {fileID: 0}
 --- !u!1001 &1772054329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17718,6 +17722,7 @@ MonoBehaviour:
   knotName: Start
   inkManager: {fileID: 1932021553}
   clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
+  player: {fileID: 0}
 --- !u!65 &1788919362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18954,6 +18959,7 @@ MonoBehaviour:
   knotName: level4
   inkManager: {fileID: 1932021553}
   clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
+  player: {fileID: 0}
 --- !u!1 &1925532119
 GameObject:
   m_ObjectHideFlags: 0
