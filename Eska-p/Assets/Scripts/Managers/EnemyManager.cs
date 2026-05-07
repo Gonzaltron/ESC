@@ -15,17 +15,11 @@ public class EnemyManager : MonoBehaviour
     {
         
     }
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("player") && !isActive)
+        if (other.CompareTag("player"))
         {
             spawnEnemigos.SetActive(true);
-            isActive = true;
-        }
-        else if (other.gameObject.CompareTag("player") && isActive)
-        {
-            spawnEnemigos.SetActive(false);
-            isActive = false;
         }
     }
 }

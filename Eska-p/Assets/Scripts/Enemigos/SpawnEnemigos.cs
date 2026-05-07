@@ -9,10 +9,10 @@ public class SpawnEnemigos : MonoBehaviour
     public float spawnDistance = 10f; // Distancia desde el jugador
     private int spawnedEnemies; // El máximo de enemigos que puede haber a la vez
     private bool isSpawning = false; // Booleano para la corrutina, para que no spawneeen los enemigos a la vez
+    public Transform spawnCenter;
 
     void Start()
     {
-        this.gameObject.SetActive(false);
         isSpawning = false;
     }
 
@@ -21,7 +21,6 @@ public class SpawnEnemigos : MonoBehaviour
         if (!isSpawning) // Si no se está spawneando
         {
             StartSpawn(); // Se Llama a la función
-            player.transform.position = transform.position;
         }
     }
     public void StartSpawn()
@@ -40,7 +39,7 @@ public class SpawnEnemigos : MonoBehaviour
         {
             spawnedEnemies++; // Se suma 1 a la cantidad de enemigos que hay en 
             Vector3 randomDirection = Random.onUnitSphere; // Da un punto aleatorio del radio de una esfera, es decir, no da lejanía sino que hace que pueda aparecer a la izquierda, derecha etc.
-            Vector3 randomSpawnPosition = player.position + (randomDirection * spawnDistance); // La posición final se consigue sumando la posición del jugador con la multiplicación de un punto aleatorio del radio y la distancia mínima para que aparezca alejado del jugador
+            Vector3 randomSpawnPosition = spawnCenter.position + (Random.insideUnitSphere * spawnDistance);
             Instantiate(enemy, randomSpawnPosition, Quaternion.identity); // Se instancia el prefab enemigo en la posición aleatorio
         }
         isSpawning = false; // Se pone en false para que lal corrutina se pueda volver a llamar

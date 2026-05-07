@@ -23,12 +23,11 @@ public class Checkpoints : MonoBehaviour
         if (other.CompareTag("player"))
         {
             Spawn.Instance.SetCheckpoint(transform.position);
+            Player player = other.GetComponent<Player>();
 
-            Player playerScript = other.GetComponent<Player>();
-
-            if (playerScript != null)
+            if (player != null)
             {
-                playerScript.health = 3;
+                player.health = 3;
             }
         }
     }
