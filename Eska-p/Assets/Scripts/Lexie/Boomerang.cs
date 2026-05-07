@@ -13,10 +13,10 @@ public class Boomerang : MonoBehaviour
 
 
     private bool isThrown;
-    private bool isReturning; 
+    private bool isReturning;
     private Vector3 DistPos;
     private BoomerangRotation rotation;
-    
+
 
 
 
@@ -24,10 +24,14 @@ public class Boomerang : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Collider boomCollider = boom.GetComponent<Collider>();
+        Collider lexiCollider = boomPos.GetComponent<Collider>();
+
+        Physics.IgnoreCollision(boomCollider, lexiCollider);
+
         rotation = boom.GetComponent<BoomerangRotation>();
         rotation.enabled = false;
-
-        boom.transform.parent = boomPos;
+        transform.SetParent(boomPos, false);
         boom.transform.localPosition = Vector3.zero;
         boom.transform.localRotation = Quaternion.identity;
 
@@ -57,7 +61,8 @@ public class Boomerang : MonoBehaviour
             {
                 isReturning = false;
                 rotation.enabled = false;
-                boom.transform.parent = boomPos;
+                boom.transform.SetParent(boomPos, false);
+                boom.transform.localPosition = Vector3.zero;
                 boom.transform.rotation = boomRot.rotation;
             }
         }
@@ -75,7 +80,7 @@ public class Boomerang : MonoBehaviour
     void Distance() //Detectar si hay objeto conn el raycast y sino se va a cuenca
     {
         RaycastHit hitInfo;
-        if (Physics.Raycast(boomPos.transform.position, boomPos.transform.forward, out hitInfo, boomDist,layMask))
+        if (Physics.Raycast(boomPos.transform.position, boomPos.transform.forward, out hitInfo, boomDist, layMask))
         {
             DistPos = hitInfo.point;
             boom.transform.parent = null;
@@ -91,4 +96,7 @@ public class Boomerang : MonoBehaviour
             isThrown = true;
         }
     }
+
+
 }
+
