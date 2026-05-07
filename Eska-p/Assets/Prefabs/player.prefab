@@ -129,6 +129,8 @@ MonoBehaviour:
   raycastDistance: 0
   grounded: 0
   childCollision: {fileID: 0}
+  velVertical: {x: 0, y: 0, z: 0}
+  horizontalVelocity: {x: 0, y: 0, z: 0}
 --- !u!143 &5801783432460763818
 CharacterController:
   m_ObjectHideFlags: 0
