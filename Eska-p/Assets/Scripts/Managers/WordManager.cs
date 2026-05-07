@@ -16,6 +16,7 @@ public class WordManager : MonoBehaviour
     [SerializeField] Material defaultMat;
     int index;
     int correctAmount;
+    bool isComplete;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -76,21 +77,25 @@ public class WordManager : MonoBehaviour
             if(correctAmount == CorrectWord.Count)
             {
                 door.SetActive(false);
+                isComplete = true;
             }
             
         }
     }
 
-    void deleteList()
+    public void deleteList()
     {
-        word.Clear();
-        CharState.Clear();
-        for(int i = 0; i < charWall.Count; i++)
+        if(!isComplete)
         {
-            charWall[i].text = " ";
-            charWallObj[i].GetComponent<MeshRenderer>().material = defaultMat;
+            word.Clear();
+            CharState.Clear();
+            for(int i = 0; i < charWall.Count; i++)
+            {
+                charWall[i].text = " ";
+                charWallObj[i].GetComponent<MeshRenderer>().material = defaultMat;
+            }
+            index = 0;
+            correctAmount = 0;
         }
-        index = 0;
-        correctAmount = 0;
     }
 }

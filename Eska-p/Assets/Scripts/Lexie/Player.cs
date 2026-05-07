@@ -13,11 +13,19 @@ public class Player : MonoBehaviour
     //private Vector3 respawnLocation;
     public GameObject player;
     public bool isDead;
+    GameObject room1;
+    GameObject room2;
+    GameObject room3;
+    GameObject room4;
     void Start()
     {
         //respawnLocation = player.transform.position;
-        Time.timeScale = 1f;  // El juego se inciia, esto deberá estar en gamemanager pero por ahora aquí
+        Time.timeScale = 1f;  // El juego se inciia, esto deberï¿½ estar en gamemanager pero por ahora aquï¿½
         isDead = false;
+        room1 = GameObject.Find("Level1");
+        room2 = GameObject.Find("Level2");
+        room3 = GameObject.Find("Level3");
+        room4 = GameObject.Find("Level4");
     }
 
     // Update is called once per frame
@@ -31,10 +39,11 @@ public class Player : MonoBehaviour
         if (!receivingDamage)
         {
             receivingDamage = true;
-            health -= damage; // Se le quita la cantidad de daño a la cantidad de vida
+            health -= damage; // Se le quita la cantidad de daï¿½o a la cantidad de vida
             if (health <= 0) // Si tiene 0 o menos vida
             {
-                Die(); // Llama al método de muerte
+                Die(); // Llama al mï¿½todo de muerte
+                DeleteChars();
             }
             else
             {
@@ -76,9 +85,17 @@ public class Player : MonoBehaviour
         isDead = false;
         receivingDamage = false;
     }
-    IEnumerator Damage() // Corrutina para que no pueda recibir daño doble al mismo momento, igual hay que auemntar los segundosen el futuro
+    IEnumerator Damage() // Corrutina para que no pueda recibir daï¿½o doble al mismo momento, igual hay que auemntar los segundosen el futuro
     {
         yield return new WaitForSeconds(1f); 
         receivingDamage = false; 
+    }
+
+    void DeleteChars()
+    {
+        room1.GetComponent<WordManager>().deleteList();
+        room2.GetComponent<WordManager>().deleteList();
+        room3.GetComponent<WordManager>().deleteList();
+        room4.GetComponent<WordManager>().deleteList();
     }
 }
