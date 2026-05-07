@@ -18,11 +18,18 @@ public class Checkpoints : MonoBehaviour
     {
         NextSpawn();
     }
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("player"))
+        if (other.CompareTag("player"))
         {
-            spawnPosition = player.transform.position;
+            Spawn.Instance.SetCheckpoint(transform.position);
+
+            Player playerScript = other.GetComponent<Player>();
+
+            if (playerScript != null)
+            {
+                playerScript.health = 3;
+            }
         }
     }
     public void NextSpawn()

@@ -15459,7 +15459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8601810845341403854, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -47.887146
+      value: -47.887207
       objectReference: {fileID: 0}
     - target: {fileID: 8601810845341403854, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -16451,6 +16451,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5816190957003967070, guid: 58f542b0ceb653845b698ff9c5754961, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1947400506}
+    - target: {fileID: 5816190957003967070, guid: 58f542b0ceb653845b698ff9c5754961, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 1624319360984318666, guid: 4964953dff287694596463f5ad7eead6, type: 3}
     - target: {fileID: 8981340257472407708, guid: 58f542b0ceb653845b698ff9c5754961, type: 3}
       propertyPath: m_Name
       value: SpawnPoint

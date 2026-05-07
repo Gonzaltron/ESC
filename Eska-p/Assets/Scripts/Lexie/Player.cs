@@ -33,22 +33,22 @@ public class Player : MonoBehaviour
     {
 
     }
-
     public void TakeDamage(int damage)
     {
-        if (!receivingDamage)
+        if (receivingDamage) return;
+
+        receivingDamage = true;
+
+        health -= damage; // Se le quita la cantidad de da�o a la cantidad de vida
+
+        if (health <= 0)// Si tiene 0 o menos vida
         {
-            receivingDamage = true;
-            health -= damage; // Se le quita la cantidad de da�o a la cantidad de vida
-            if (health <= 0) // Si tiene 0 o menos vida
-            {
-                Die(); // Llama al m�todo de muerte
-                DeleteChars();
-            }
-            else
-            {
-                DeactivateDamage();
-            }      
+            DeleteChars();
+            Die();  // Llama al m�todo de muerte
+        }
+        else
+        {
+            StartCoroutine(Damage());
         }
     }
 
@@ -79,11 +79,10 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        isDead = true;
-        Spawn.Instance.Respawn();
         health = 3;
-        isDead = false;
-        receivingDamage = false;
+        Spawn.Instance.Respawn();
+        receivingDamage = true;
+        StartCoroutine(Damage());
     }
     IEnumerator Damage() // Corrutina para que no pueda recibir da�o doble al mismo momento, igual hay que auemntar los segundosen el futuro
     {

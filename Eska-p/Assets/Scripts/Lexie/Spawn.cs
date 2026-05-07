@@ -20,11 +20,8 @@ public class Spawn : MonoBehaviour
     void Start()
     {
         spawn = GameObject.FindGameObjectWithTag("spawn");
-        SpawnPlayerFirstTime();
-    }
-    public void SpawnPlayerFirstTime()
-    {
         player = Instantiate(player, spawn.transform.position, Quaternion.identity);
+        lastCheckpoint = spawn.transform.position;
     }
     public void SetCheckpoint(Vector3 checkpointPosition)
     {
@@ -33,9 +30,8 @@ public class Spawn : MonoBehaviour
 
     public void Respawn()
     {
-        player.transform.position = lastCheckpoint;
+        player.transform.position = lastCheckpoint + Vector3.up * 1.5f;
     }
-
     // Update is called once per frame
     void Update()
     {
