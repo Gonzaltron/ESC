@@ -24,9 +24,24 @@ public class Boomerang : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Collider boomCollider = boom.GetComponent<Collider>();
-        Collider lexiCollider = boomPos.GetComponent<Collider>();
 
+        if (boom == null)
+        {
+            boom = transform.Find("Boomerang").gameObject;
+        }
+
+        if (boomPos == null)
+        {
+            boomPos = transform.Find("BoomPos");
+        }
+
+        if (boomRot == null)
+        {
+            boomRot = transform.Find("Rotation");
+        }
+
+        Collider boomCollider = boom.GetComponent<Collider>();
+        Collider lexiCollider = GetComponentInParent<Collider>();
         Physics.IgnoreCollision(boomCollider, lexiCollider);
 
         rotation = boom.GetComponent<BoomerangRotation>();
