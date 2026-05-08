@@ -126,12 +126,12 @@ MonoBehaviour:
   boom: {fileID: 637643040843084717}
   boomPos: {fileID: 4040277855777120248}
   boomRot: {fileID: 391275438579524755}
-  boomDist: 5
-  boomSpeed: 5
+  boomDist: 10
+  boomSpeed: 20
   damage: 1
   layMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4609
 --- !u!114 &1417049270602541201
 MonoBehaviour:
   m_ObjectHideFlags: 0
