@@ -41,12 +41,10 @@ public class Boomerang : MonoBehaviour
             boomRot = transform.Find("Rotation");
         }
 
+        //collider de lexi y boomerang para evitar collisiones pq sino se va para atras con el boom
+
         Collider boomCollider = boom.GetComponent<Collider>();
         Collider lexiCollider = GetComponentInParent<Collider>();
-
-        //collider de lexi y boomerang para evitar collisiones pq sino se va para atras con el boom
-   
-
         Physics.IgnoreCollision(boomCollider, lexiCollider);
 
         //pilla el script de rotacion y lo ignora hasta qe se lance 
