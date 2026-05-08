@@ -17,6 +17,8 @@ public class WordManager : MonoBehaviour
     int index;
     int correctAmount;
     bool isComplete;
+    int temp;
+    int temp2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,41 +47,44 @@ public class WordManager : MonoBehaviour
     }
     public void CheckLetra()
     {
-        for (int i = 0; i< word.Count; i++)
+        for (int i = 0; i < CorrectWord.Count; i++)
         {
-            
-            for(int j = 0; j< CorrectWord.Count; j++)
+            if (word[i] == CorrectWord[i])
             {
-                if(word[i] == CorrectWord[j] && i == j)
-                {
-                    CharState.Add(1);
-                    correctAmount ++;
+                CharState.Add(1);
+                correctAmount++;
+            }
+            else if (CorrectWord.Contains(word[i]))
+            {
+                CharState.Add(2);
+            }
+            else
+            {
+                CharState.Add(0);
+            }
+        }
+        SolveWord();
+    }
+    void SolveWord()
+    {
+        for (int i = 0; i < CorrectWord.Count; i++)
+        {
+            switch (CharState[i])
+            {
+                case 0:
+                    charWallObj[i].GetComponent<MeshRenderer>().material = wrong;
+                    break;
+                case 1:
                     charWallObj[i].GetComponent<MeshRenderer>().material = correct;
                     break;
-                }
-                else if(word[i] == CorrectWord[j] && i != j)
-                {
-                    if(charWallObj[i].GetComponent<MeshRenderer>().material != correct)
-                    {
-                        CharState.Add(2);
-                        charWallObj[i].GetComponent<MeshRenderer>().material = wrongPlace;
-                    }
-                }
-                else
-                {
-                    if(charWallObj[i].GetComponent<MeshRenderer>().material != correct && charWallObj[i].GetComponent<MeshRenderer>().material != wrongPlace)
-                    {
-                        CharState.Add(0);
-                        charWallObj[i].GetComponent<MeshRenderer>().material = wrong;
-                    }
-                }
+                case 2:
+                    charWallObj[i].GetComponent<MeshRenderer>().material = wrongPlace;
+                    break;
             }
-            if(correctAmount == CorrectWord.Count)
-            {
-                door.SetActive(false);
-                isComplete = true;
-            }
-            
+        }
+        if(correctAmount == CorrectWord.Count)
+        {
+            door.SetActive(false);
         }
     }
 
