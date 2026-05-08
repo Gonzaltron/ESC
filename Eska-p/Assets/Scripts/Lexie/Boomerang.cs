@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Boomerang : MonoBehaviour
@@ -8,8 +9,8 @@ public class Boomerang : MonoBehaviour
     [SerializeField] Transform boomRot;     //Referencia de rotación
     [SerializeField] float boomDist;    //Distancia del lanzamiento, se puede editar en el editor de unitu
     [SerializeField] float boomSpeed;   //Velocidad, tambien se edita en unity
-    [SerializeField] float damage;  //Daño que hace en los enemigos editar en uniity
-    [SerializeField] private LayerMask layMask; //con o que va a interaccionar el raycast del boomerang (teneis que poner el layer a los enemigos de enemigo)
+    [SerializeField] public float damage;  //Daño que hace en los enemigos editar en uniity
+    [SerializeField] private LayerMask layMask;     //con los bloques estilo teclas y tal 
 
 
     private bool isThrown;  //si el boom va a los enemigos
@@ -51,8 +52,9 @@ public class Boomerang : MonoBehaviour
         rotation = boom.GetComponent<BoomerangRotation>();
         rotation.enabled = false;
 
+
         //boom se pone donde lexi 
-        transform.SetParent(boomPos, false);
+        boom.transform.SetParent(boomPos, false);
         boom.transform.localPosition = Vector3.zero;
         boom.transform.localRotation = Quaternion.identity;
         boom.transform.localScale = Vector3.one;    //resetea escala para que no robe la de lexi
@@ -114,10 +116,7 @@ public class Boomerang : MonoBehaviour
         if (Physics.Raycast(boomPos.transform.position, boomPos.transform.forward, out hitInfo, boomDist, layMask))
         {
             DistPos = hitInfo.point;
-            /*boom.transform.parent = null;
-            rotation.enabled = true;
-            isThrown = true;*/
-
+      
         }
         else
         {   
@@ -129,6 +128,16 @@ public class Boomerang : MonoBehaviour
         rotation.enabled = true;
         isThrown = true;
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        Icono_Accesibilidad icono = other.GetComponent<Icono_Accesibilidad>();
+        if (icono != null)
+        {
+            icono.Die();
+        }
+    }
+
+
 
 
 }

@@ -16,6 +16,7 @@ public class Icono_Accesibilidad : MonoBehaviour
     public bool receivingDamage;
     public int health;
 
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>(); // Para poder usar el NavMeshAgent
@@ -72,7 +73,7 @@ public class Icono_Accesibilidad : MonoBehaviour
             health -= damage; // Se le quita la cantidad de daño a la cantidad de vida
             if (health <= 0) // Si tiene 0 o menos vida
             {
-                //Die(); // Llama al método de muerte
+                //Die(); 
             }
 
         }
@@ -102,4 +103,9 @@ public class Icono_Accesibilidad : MonoBehaviour
         }
         isAttacking = false; // Como se sale del bucle, el jugador está muerto o fuera de rango así que cambia el estado de ataque a falso     
     }
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
 }
