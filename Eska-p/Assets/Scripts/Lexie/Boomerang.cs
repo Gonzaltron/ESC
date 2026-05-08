@@ -34,6 +34,7 @@ public class Boomerang : MonoBehaviour
         transform.SetParent(boomPos, false);
         boom.transform.localPosition = Vector3.zero;
         boom.transform.localRotation = Quaternion.identity;
+        boom.transform.localScale = Vector3.one;
 
     }
 
@@ -64,6 +65,7 @@ public class Boomerang : MonoBehaviour
                 boom.transform.SetParent(boomPos, false);
                 boom.transform.localPosition = Vector3.zero;
                 boom.transform.rotation = boomRot.rotation;
+                boom.transform.localScale = Vector3.one;
             }
         }
     }
