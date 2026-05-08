@@ -7,7 +7,7 @@ Venga no te enfades conmigo, hay que buscar la salida, no nos quedemos aquí pla
 -> END
 
 === level1 ===
-Oh no! Parece que estos iconos de accesibilidad no te dejarán en paz. Es posible que puedas matarlos con tus discos, prueba a lanzarlos contra ellos clickando E.
+Mmm... parece que deberás adivinar la palabra, según mis fuentes debes saltar encima y pulsar la E para poner cada letra... Oh no! Parece que estos iconos de accesibilidad no te dejarán en paz. Es posible que puedas matarlos con tus discos, prueba a lanzarlos contra ellos con el click derecho. 
 
 -> END
 
