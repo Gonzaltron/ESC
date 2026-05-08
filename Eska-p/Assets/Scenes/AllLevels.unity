@@ -1766,11 +1766,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6758534819073411836, guid: 5eab8750ffa282d4088d8468a1178294, type: 3}
       propertyPath: m_LocalScale.z
-      value: 58.999996
+      value: 59.997093
       objectReference: {fileID: 0}
     - target: {fileID: 6758534819073411836, guid: 5eab8750ffa282d4088d8468a1178294, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.000006
+      value: 10.500006
       objectReference: {fileID: 0}
     - target: {fileID: 6903715851178877087, guid: 5eab8750ffa282d4088d8468a1178294, type: 3}
       propertyPath: character
@@ -4068,6 +4068,7 @@ MonoBehaviour:
   player: {fileID: 0}
   spawnDistance: 10
   spawnCenter: {fileID: 18985224}
+  enemiesList: []
 --- !u!4 &388396033
 Transform:
   m_ObjectHideFlags: 0
@@ -5078,6 +5079,7 @@ MonoBehaviour:
   player: {fileID: 0}
   spawnDistance: 10
   spawnCenter: {fileID: 873814610}
+  enemiesList: []
 --- !u!4 &551155036
 Transform:
   m_ObjectHideFlags: 0
