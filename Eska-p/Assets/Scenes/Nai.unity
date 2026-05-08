@@ -868,7 +868,7 @@ MonoBehaviour:
   damage: 1
   layMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 513
 --- !u!33 &3455837589995247163
 MeshFilter:
   m_ObjectHideFlags: 0
