@@ -127,7 +127,7 @@ MonoBehaviour:
   boomPos: {fileID: 8093818310404501921, guid: 4964953dff287694596463f5ad7eead6, type: 3}
   boomRot: {fileID: 0}
   boomDist: 15
-  boomSpeed: 5
+  boomSpeed: 20
   damage: 1
   layMask:
     serializedVersion: 2
