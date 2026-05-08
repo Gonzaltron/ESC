@@ -24,7 +24,7 @@ public class Boomerang : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-<<<<<<< HEAD
+
 
         if (boom == null)
         {
@@ -43,11 +43,10 @@ public class Boomerang : MonoBehaviour
 
         Collider boomCollider = boom.GetComponent<Collider>();
         Collider lexiCollider = GetComponentInParent<Collider>();
-=======
+
         //collider de lexi y boomerang para evitar collisiones pq sino se va para atras con el boom
-        Collider boomCollider = boom.GetComponent<Collider>();  
-        Collider lexiCollider = boomPos.GetComponent<Collider>();
->>>>>>> 02444cc3155b8296f2dd55e3ed0d9c92b96a2347
+   
+
         Physics.IgnoreCollision(boomCollider, lexiCollider);
 
         //pilla el script de rotacion y lo ignora hasta qe se lance 
