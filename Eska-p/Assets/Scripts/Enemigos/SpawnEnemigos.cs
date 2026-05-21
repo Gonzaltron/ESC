@@ -1,7 +1,7 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine;
 
 public class SpawnEnemigos : MonoBehaviour
 {
@@ -12,7 +12,11 @@ public class SpawnEnemigos : MonoBehaviour
     private bool isSpawning = false; // Booleano para la corrutina, para que no spawneeen los enemigos a la vez
     public Transform spawnCenter;
     public GameObject[] enemiesList;
-
+    public static SpawnEnemigos Instance;
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         isSpawning = false;
@@ -39,11 +43,22 @@ public class SpawnEnemigos : MonoBehaviour
         yield return new WaitForSeconds(1f); // Se espera un segundo
         if (spawnedEnemies < 3) // Se vuelve a comprobar que haya menos de 2 enemigos en pantalla
         {
-            spawnedEnemies++; // Se suma 1 a la cantidad de enemigos que hay en 
-            Vector3 randomDirection = Random.onUnitSphere; // Da un punto aleatorio del radio de una esfera, es decir, no da lejanía sino que hace que pueda aparecer a la izquierda, derecha etc.
-            Vector3 randomSpawnPosition = spawnCenter.position + (Random.insideUnitSphere * spawnDistance);
+            Vector2 randomCircle = Random.insideUnitCircle * spawnDistance;
+
+            Vector3 randomSpawnPosition = new Vector3(spawnCenter.position.x + randomCircle.x,spawnCenter.position.y,spawnCenter.position.z + randomCircle.y);
             Instantiate(enemy, randomSpawnPosition, Quaternion.identity); // Se instancia el prefab enemigo en la posición 
+            spawnedEnemies++;// Se suma 1 a la cantidad de enemigos que hay en 
+
         }
         isSpawning = false; // Se pone en false para que lal corrutina se pueda volver a llamar
+    }
+    public void EnemyDied()
+    {
+        spawnedEnemies--;
+
+        if (spawnedEnemies < 0)
+        {
+            spawnedEnemies = 0;
+        }
     }
 }

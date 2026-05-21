@@ -1,41 +1,59 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
-using System.Collections.Generic;
 
 public class Icono_Accesibilidad : MonoBehaviour
 {
-    public Transform playerT; // Referencia a player para que lo siga
+    public Transform playerT;
     public float speed = 2;
-    private NavMeshAgent agent; // Referencia del enemigo 
+
+    private NavMeshAgent agent;
+
     private float distance;
+
     public float attackDistance;
     public float escapingAttackDistance;
-    private bool isAttacking = false;
-    public GameObject player;
-    public bool receivingDamage;
-    public int health;
 
+    private bool isAttacking = false;
+    private bool attackCoroutineRunning = false;
+
+    public GameObject player;
+
+    public bool receivingDamage;
+
+    public int health = 1;
 
     void Awake()
     {
-        agent = GetComponent<NavMeshAgent>(); // Para poder usar el NavMeshAgent
-    }
-    void Start()
-    {
-        playerT = GameObject.FindGameObjectWithTag("player").GetComponent<Transform>(); // Encuentra la posición del jugador
-        player = playerT.gameObject; // Consigo direcamente el player 
+        agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        playerT = GameObject.FindGameObjectWithTag("player").GetComponent<Transform>();
+
+        player = playerT.gameObject;
+    }
+
     void Update()
     {
-        distance = Vector3.Distance(agent.transform.position, playerT.position);
+        if (playerT == null)
+        {
+            return;
+        }
+
+        distance = Vector3.Distance(transform.position, playerT.position);
+
         if (!isAttacking)
         {
-            agent.GetComponent<NavMeshAgent>().enabled = true;
+            if (!agent.enabled)
+            {
+                agent.enabled = true;
+            }
+
             Persecution();
         }
+
         if (isAttacking)
         {
             StartAttack();
@@ -44,68 +62,90 @@ public class Icono_Accesibilidad : MonoBehaviour
 
     public void Persecution()
     {
-        if (playerT == null) // Para evitar que pete si no encuentra al jugador
+        if (distance < attackDistance)
         {
-            return;
+            isAttacking = true;
         }
         else
         {
-             // La distancia se calcula entre la posicion del transform del enemigo y la posicion del jugador
-            if (distance < attackDistance) // Si la distancia es menor que la distancia de ataque
-            {
-                isAttacking = true;
-            }
-            else // Si el jugador se aleja
-            {
-                isAttacking = false;
-                agent.destination = playerT.position; // El enemigo sigue al jugador
-            }
+            isAttacking = false;
+
+            agent.destination = playerT.position;
         }
     }
+
     public void StartAttack()
     {
-        StartCoroutine(Attack());
+        if (!attackCoroutineRunning)
+        {
+            StartCoroutine(Attack());
+        }
     }
+
     public void TakeDamage(int damage)
     {
-        if (!receivingDamage)
+        if (receivingDamage)
         {
-            health -= damage; // Se le quita la cantidad de daño a la cantidad de vida
-            if (health <= 0) // Si tiene 0 o menos vida
-            {
-                //Die(); 
-            }
+            return;
+        }
 
+        receivingDamage = true;
+
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            StartCoroutine(DamageCooldown());
         }
     }
+
     IEnumerator Attack()
     {
-        agent.GetComponent<NavMeshAgent>().enabled = false;
-        isAttacking = true; // Estado de ataque activado
-        var playerHp = player.GetComponent<Player>(); // Variable llamada playerHp para guardar el script del jugador
+        attackCoroutineRunning = true;
 
-        if (playerHp.health > 0) // Mientras la vida del jugador sea mayor que 0
+        if (agent.enabled)
         {
-            yield return null;
-            if (distance < escapingAttackDistance) // Si la distancia es menor que lla distancia de ataque
+            agent.enabled = false;
+        }
+
+        Player playerHp = player.GetComponent<Player>();
+
+        if (playerHp.health > 0)
+        {
+            yield return new WaitForSeconds(0.2f);
+
+            if (distance < escapingAttackDistance)
             {
-                playerHp.TakeDamage(1); // Llama a la función de takeDamage del script del
-                if (playerHp.health <= 0) // Si la vida es igual o menor a 0
-                {
-                    StopAllCoroutines();
-                }
-                StopAllCoroutines();
-            }
-            else 
-            {
-                StopAllCoroutines();
+                playerHp.TakeDamage(1);
             }
         }
-        isAttacking = false; // Como se sale del bucle, el jugador está muerto o fuera de rango así que cambia el estado de ataque a falso     
-    }
-    public void Die()
-    {
-        Destroy(gameObject);
+
+        yield return new WaitForSeconds(1f);
+
+        if (!agent.enabled)
+        {
+            agent.enabled = true;
+        }
+
+        isAttacking = false;
+
+        attackCoroutineRunning = false;
     }
 
+    IEnumerator DamageCooldown()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        receivingDamage = false;
+    }
+
+    public void Die()
+    {
+        SpawnEnemigos.Instance.EnemyDied();
+        Destroy(gameObject);
+    }
 }
