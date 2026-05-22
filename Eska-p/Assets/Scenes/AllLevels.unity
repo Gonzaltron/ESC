@@ -14584,7 +14584,6 @@ GameObject:
   - component: {fileID: 1583764484}
   - component: {fileID: 1583764482}
   - component: {fileID: 1583764485}
-  - component: {fileID: 1583764486}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -14652,21 +14651,6 @@ MonoBehaviour:
   inkManager: {fileID: 1932021553}
   clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
   player: {fileID: 0}
---- !u!114 &1583764486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583764480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b68dcc117dc74d4590d7ae40d1fea31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawn: {fileID: 1583764480}
-  player: {fileID: 1624319360984318666, guid: 4964953dff287694596463f5ad7eead6, type: 3}
-  lastCheckpoint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1587258471
 PrefabInstance:
   m_ObjectHideFlags: 0
