@@ -40,7 +40,7 @@ public class SpawnEnemigos : MonoBehaviour
     IEnumerator Spawn()
     {
         isSpawning = true; // Se activa ell booleano para que no se esté llamando sin parar la corrutina
-        yield return new WaitForSeconds(1f); // Se espera un segundo
+        yield return new WaitForSeconds(3f); // Se espera un segundo
         if (spawnedEnemies < 3) // Se vuelve a comprobar que haya menos de 2 enemigos en pantalla
         {
             Vector2 randomCircle = Random.insideUnitCircle * spawnDistance;
