@@ -103,4 +103,11 @@ public class WordManager : MonoBehaviour
             correctAmount = 0;
         }
     }
+
+    public void RemoveOne()
+    {
+        word.RemoveAt(index - 1);
+        charWall[index - 1].text = " ";
+        index --;
+    }
 }
