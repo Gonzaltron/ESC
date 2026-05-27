@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -10,20 +11,26 @@ public class DialogueTrigger : MonoBehaviour
 
     private bool activated = false;
 
-    private void Start()
+    void Start()
     {
-        player = GameObject.FindGameObjectWithTag("player").GetComponent<Player>();
+        GameObject playerObj = GameObject.FindGameObjectWithTag("player");
+
+        if (playerObj != null)
+        {
+            player = playerObj.GetComponent<Player>();
+        }
+ 
+        inkManager = FindFirstObjectByType<InkManager>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("player") && !activated)
+        if (other.CompareTag("player") && !activated) 
         {
             activated = true;
-            Clippo.Instance.SetHint(clueName);
-            inkManager.StartDialogue(knotName);
-            player.health = 3;
-
+            Clippo.Instance.SetHint(clueName); 
+            inkManager.StartDialogue(knotName); 
+            player.health = 3; 
             Spawn.Instance.SetCheckpoint(transform.position);
         }
     }
