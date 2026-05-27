@@ -4,7 +4,7 @@ Se puede saber qué haces TÚ AQUÍ!?? ... Así que el ordenador te ha abducido 
 -> END
 
 === Start2 ===
-En serio, no te enfades, porfi, que hay que buscar la salida, no nos quedemos aquí plantadas. Ah sí, dos cositas, puedes saltar con el ESPACIO y si me echas de menos y necesitas que te eche una mano, solo pulsa la T.
+En serio, no te enfades, porfi, que hay que buscar la salida, no nos quedemos aquí plantadas. Ah sí, dos cositas, puedes saltar con el ESPACIO y si me echas de menos y necesitas que te eche una mano, solo pulsa la C.
 -> END
 
 === level1 ===

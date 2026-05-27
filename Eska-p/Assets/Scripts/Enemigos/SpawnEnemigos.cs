@@ -39,7 +39,7 @@ public class SpawnEnemigos : MonoBehaviour
             spawnedEnemies++;
         }
 
-        isSpawning = false;
+        isSpawning = false;  
     }
 
     public void EnemyDied()

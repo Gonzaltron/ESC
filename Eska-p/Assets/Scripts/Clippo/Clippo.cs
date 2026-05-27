@@ -15,7 +15,7 @@ public class Clippo : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             inkManager.StartDialogue(currentHint);
         }
