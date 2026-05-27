@@ -2,8 +2,6 @@ using Ink.Runtime;
 using TMPro;
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
-using UnityEngine.Rendering;
 public class InkManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
@@ -22,17 +20,21 @@ public class InkManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
+
         story = new Story(inkJSON.text);
     }
-    
+
     public void StartDialogue(string knotName)
     {
         story.ChoosePathString(knotName);
+
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
         }
+
         ContinueStory();
     }
     public void ContinueStory()

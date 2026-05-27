@@ -8353,6 +8353,7 @@ Transform:
   - {fileID: 1719721423}
   - {fileID: 1055124195}
   - {fileID: 1766969884}
+  - {fileID: 1594075789}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &956679436
@@ -9425,6 +9426,7 @@ Transform:
   - {fileID: 1080857816}
   - {fileID: 1625689403}
   - {fileID: 1098162816}
+  - {fileID: 1563811315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043270911
@@ -10277,8 +10279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knotName: level3
+  clueName: Clue3
   inkManager: {fileID: 1932021553}
-  clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
   player: {fileID: 0}
 --- !u!65 &1098162818
 BoxCollider:
@@ -10299,7 +10301,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1098162819
 MeshFilter:
@@ -13008,8 +13010,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knotName: final
+  clueName: 
   inkManager: {fileID: 1932021553}
-  clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
   player: {fileID: 0}
 --- !u!1001 &1343571831
 PrefabInstance:
@@ -15260,6 +15262,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554006882}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1563811314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1563811315}
+  - component: {fileID: 1563811318}
+  - component: {fileID: 1563811317}
+  - component: {fileID: 1563811319}
+  m_Layer: 0
+  m_Name: Cube (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1563811315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563811314}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -116.02316, y: -16.239994, z: 22.576477}
+  m_LocalScale: {x: -88.00458, y: -18.49987, z: 7.50015}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1042738821}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1563811317
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563811314}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1563811318
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563811314}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1563811319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563811314}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89f1108e54a25d4ca54f0e53b812ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkManager: {fileID: 1932021553}
 --- !u!208 &1581811082
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -15288,6 +15366,7 @@ GameObject:
   - component: {fileID: 1583764484}
   - component: {fileID: 1583764482}
   - component: {fileID: 1583764485}
+  - component: {fileID: 1583764486}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -15352,9 +15431,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knotName: level2
+  clueName: Clue2
   inkManager: {fileID: 1932021553}
-  clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
   player: {fileID: 0}
+--- !u!114 &1583764486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583764480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89f1108e54a25d4ca54f0e53b812ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkManager: {fileID: 1932021553}
 --- !u!1001 &1587258471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16216,6 +16308,59 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!1 &1594075788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1594075789}
+  - component: {fileID: 1594075792}
+  m_Layer: 0
+  m_Name: EnemyTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1594075789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594075788}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 41, y: -8, z: 30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 956679435}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1594075792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594075788}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 14, z: 81}
+  m_Center: {x: 1, y: 6.5, z: 0.5}
 --- !u!1 &1618551566
 GameObject:
   m_ObjectHideFlags: 0
@@ -16262,8 +16407,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knotName: Start2
+  clueName: 
   inkManager: {fileID: 1932021553}
-  clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
   player: {fileID: 0}
 --- !u!65 &1618551569
 BoxCollider:
@@ -18808,7 +18953,7 @@ Transform:
   m_GameObject: {fileID: 1766969882}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38, y: -8, z: 30}
+  m_LocalPosition: {x: 45, y: -8, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18833,7 +18978,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8, y: 14, z: 81}
+  m_Size: {x: 2, y: 14, z: 81}
   m_Center: {x: 1, y: 6.5, z: 0.5}
 --- !u!114 &1766969887
 MonoBehaviour:
@@ -18848,8 +18993,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knotName: level1
+  clueName: Clue1
   inkManager: {fileID: 1932021553}
-  clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
   player: {fileID: 0}
 --- !u!1001 &1772054329
 PrefabInstance:
@@ -19149,8 +19294,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knotName: Start
+  clueName: 
   inkManager: {fileID: 1932021553}
-  clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
   player: {fileID: 0}
 --- !u!65 &1788919362
 BoxCollider:
@@ -20402,8 +20547,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knotName: level4
+  clueName: 
   inkManager: {fileID: 1932021553}
-  clippo: {fileID: 6817223643721076634, guid: d6837a766cc217d49bf1a1a6a3e2c637, type: 3}
   player: {fileID: 0}
 --- !u!1 &1925532119
 GameObject:
