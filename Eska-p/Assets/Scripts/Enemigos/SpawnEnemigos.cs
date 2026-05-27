@@ -1,57 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+Ôªøusing System.Collections;
 using UnityEngine;
 
 public class SpawnEnemigos : MonoBehaviour
 {
     public GameObject enemy;
-    public Transform player;
-    public float spawnDistance = 10f; // Distancia desde el jugador
-    private int spawnedEnemies; // El m·ximo de enemigos que puede haber a la vez
-    private bool isSpawning = false; // Booleano para la corrutina, para que no spawneeen los enemigos a la vez
     public Transform spawnCenter;
-    public GameObject[] enemiesList;
-    public static SpawnEnemigos Instance;
-    void Awake()
-    {
-        Instance = this;
-    }
-    void Start()
-    {
-        isSpawning = false;
-    }
+
+    public float spawnDistance = 10f; // Distancia desde el jugador
+    public int maxEnemies = 3; 
+
+    private int spawnedEnemies = 0; // El m√°ximo de enemigos que puede haber a la vez
+    private bool isSpawning = false; // Booleano para la corrutina, para que no spawneeen los enemigos a la vez
 
     void Update()
     {
-        if (!isSpawning) // Si no se est· spawneando
+        if (!isSpawning && spawnedEnemies < maxEnemies)
         {
-            StartSpawn(); // Se Llama a la funciÛn
-        }
-    }
-    public void StartSpawn()
-    {
-        if (spawnedEnemies < 3) // Si la cantidad de enemigos en pantalla es menor a 2
-        {
-            StartCoroutine(Spawn()); // Se llama a la corrutina para que aparezcan
+            StartCoroutine(Spawn());
         }
     }
 
     IEnumerator Spawn()
     {
-        isSpawning = true; // Se activa ell booleano para que no se estÈ llamando sin parar la corrutina
-        yield return new WaitForSeconds(3f); // Se espera un segundo
-        if (spawnedEnemies < 3) // Se vuelve a comprobar que haya menos de 2 enemigos en pantalla
+        isSpawning = true;
+
+        yield return new WaitForSeconds(3f);
+
+        if (spawnedEnemies < maxEnemies)
         {
             Vector2 randomCircle = Random.insideUnitCircle * spawnDistance;
 
-            Vector3 randomSpawnPosition = new Vector3(spawnCenter.position.x + randomCircle.x,spawnCenter.position.y,spawnCenter.position.z + randomCircle.y);
-            Instantiate(enemy, randomSpawnPosition, Quaternion.identity); // Se instancia el prefab enemigo en la posiciÛn 
-            spawnedEnemies++;// Se suma 1 a la cantidad de enemigos que hay en 
+            Vector3 spawnPos = new Vector3(spawnCenter.position.x + randomCircle.x, spawnCenter.position.y, spawnCenter.position.z + randomCircle.y);
 
+            GameObject newEnemy = Instantiate(enemy, spawnPos, Quaternion.identity);
+
+            newEnemy.GetComponent<Icono_Accesibilidad>().SetSpawner(this);
+
+            spawnedEnemies++;
         }
-        isSpawning = false; // Se pone en false para que lal corrutina se pueda volver a llamar
+
+        isSpawning = false;
     }
+
     public void EnemyDied()
     {
         spawnedEnemies--;

@@ -45,7 +45,10 @@ public class Player : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        if (receivingDamage) return;
+        if (receivingDamage)
+        {
+            return;
+        }
 
         receivingDamage = true;
 

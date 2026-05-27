@@ -8,7 +8,6 @@ public class Icono_Accesibilidad : MonoBehaviour
     public float speed = 2;
 
     private NavMeshAgent agent;
-
     private float distance;
 
     public float attackDistance;
@@ -20,8 +19,9 @@ public class Icono_Accesibilidad : MonoBehaviour
     public GameObject player;
 
     public bool receivingDamage;
-
     public int health = 1;
+
+    private SpawnEnemigos spawner;
 
     void Awake()
     {
@@ -30,17 +30,12 @@ public class Icono_Accesibilidad : MonoBehaviour
 
     void Start()
     {
-        playerT = GameObject.FindGameObjectWithTag("player").GetComponent<Transform>();
-
+        playerT = GameObject.FindGameObjectWithTag("player").transform;
         player = playerT.gameObject;
     }
 
     void Update()
     {
-        if (playerT == null)
-        {
-            return;
-        }
 
         Vector3 enemyPos = transform.position;
         Vector3 playerPos = playerT.position;
@@ -52,18 +47,17 @@ public class Icono_Accesibilidad : MonoBehaviour
 
         if (!isAttacking)
         {
-            if (!agent.enabled)
-            {
-                agent.enabled = true;
-            }
-
             Persecution();
         }
-
-        if (isAttacking)
+        else
         {
             StartAttack();
         }
+    }
+
+    public void SetSpawner(SpawnEnemigos spawn)
+    {
+        spawner = spawn;
     }
 
     public void Persecution()
@@ -75,7 +69,6 @@ public class Icono_Accesibilidad : MonoBehaviour
         else
         {
             isAttacking = false;
-
             agent.destination = playerT.position;
         }
     }
@@ -113,11 +106,6 @@ public class Icono_Accesibilidad : MonoBehaviour
     {
         attackCoroutineRunning = true;
 
-        if (agent.enabled)
-        {
-            agent.enabled = false;
-        }
-
         Player playerHp = player.GetComponent<Player>();
 
         if (playerHp.health > 0)
@@ -132,26 +120,19 @@ public class Icono_Accesibilidad : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        if (!agent.enabled)
-        {
-            agent.enabled = true;
-        }
-
         isAttacking = false;
-
         attackCoroutineRunning = false;
     }
 
     IEnumerator DamageCooldown()
     {
         yield return new WaitForSeconds(0.5f);
-
         receivingDamage = false;
     }
 
     public void Die()
     {
-        SpawnEnemigos.Instance.EnemyDied();
+        spawner.EnemyDied();
         Destroy(gameObject);
     }
 }
