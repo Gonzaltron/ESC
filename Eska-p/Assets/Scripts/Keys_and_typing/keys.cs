@@ -18,6 +18,17 @@ public class keys : MonoBehaviour
     
     public void addCharacter()
     {
-        wordManager.AddChar(character);
+        if(CompareTag("Borrar1"))
+        {
+            wordManager.RemoveOne();
+        }
+        else if(CompareTag("BorrarTodo"))
+        {
+            wordManager.DeleteList();
+        }
+        else
+        {
+            wordManager.AddChar(character);
+        }
     }
 }

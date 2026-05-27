@@ -35,7 +35,7 @@ public class WordManager : MonoBehaviour
     {
         if(word.Count == CorrectWord.Count)
         {
-            deleteList();
+            DeleteList();
         }
         word.Add(character);
         charWall[index].text = character.ToString();
@@ -88,7 +88,7 @@ public class WordManager : MonoBehaviour
         }
     }
 
-    public void deleteList()
+    public void DeleteList()
     {
         if(!isComplete)
         {
