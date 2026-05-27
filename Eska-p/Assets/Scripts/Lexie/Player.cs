@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
     }
     IEnumerator Damage() // Corrutina para que no pueda recibir da�o doble al mismo momento, igual hay que auemntar los segundosen el futuro
     {
-        yield return new WaitForSeconds(1f); 
+        yield return new WaitForSeconds(2f); 
         receivingDamage = false; 
     }
 

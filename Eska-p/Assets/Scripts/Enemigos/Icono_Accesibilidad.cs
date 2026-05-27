@@ -42,7 +42,13 @@ public class Icono_Accesibilidad : MonoBehaviour
             return;
         }
 
-        distance = Vector3.Distance(transform.position, playerT.position);
+        Vector3 enemyPos = transform.position;
+        Vector3 playerPos = playerT.position;
+
+        enemyPos.y = 0;
+        playerPos.y = 0;
+
+        distance = Vector3.Distance(enemyPos, playerPos);
 
         if (!isAttacking)
         {
