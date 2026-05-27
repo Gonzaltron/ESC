@@ -12,6 +12,8 @@ TagManager:
   - configuracion
   - lupa
   - Tecla
+  - Borrar1
+  - BorrarTodo
   layers:
   - Default
   - TransparentFX

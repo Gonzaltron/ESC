@@ -110,9 +110,9 @@ public class Player : MonoBehaviour
 
     void DeleteChars()
     {
-        room1.GetComponent<WordManager>().deleteList();
-        room2.GetComponent<WordManager>().deleteList();
-        room3.GetComponent<WordManager>().deleteList();
-        room4.GetComponent<WordManager>().deleteList();
+        room1.GetComponent<WordManager>().DeleteList();
+        room2.GetComponent<WordManager>().DeleteList();
+        room3.GetComponent<WordManager>().DeleteList();
+        room4.GetComponent<WordManager>().DeleteList();
     }
 }
