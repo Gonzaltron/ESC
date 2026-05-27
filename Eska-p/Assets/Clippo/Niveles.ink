@@ -1,14 +1,14 @@
 === Start ===
-Se puede saber qué hago yo aquí?!! Aunque tengo una pregunta mejor, qué haces TÚ AQUÍ!?? ... Así que el ordenador te ha abducido por usar mucho el fotolog... No es que le quiera dar la razón pero es verdad que pasabas demasiado tiempo ahí... Venga, no te enfades conmigo.
+Se puede saber qué haces TÚ AQUÍ!?? ... Así que el ordenador te ha abducido por usar mucho el fotolog... No es que le quiera dar la razón pero es verdad que pasabas demasiado tiempo ahí... Venga, no te enfades conmigo, si necesitas un momento ya sabes que puedes hacerlo con la tecla ESC.
 
 -> END
 
 === Start2 ===
-En serio, no te enfades porfi, hay que buscar la salida, no nos quedemos aquí plantadas, ah sí, se me olvidó decirte, puedes saltar con el ESPACIO.
+En serio, no te enfades, porfi, que hay que buscar la salida, no nos quedemos aquí plantadas. Ah sí, dos cositas, puedes saltar con el ESPACIO y si me echas de menos y necesitas que te eche una mano, solo pulsa la T.
 -> END
 
 === level1 ===
-Mmm... parece que deberás adivinar la palabra, según mis fuentes, debes saltar encima y pulsar la E para poner cada letra... Oh no! Parece que estos iconos de accesibilidad no te dejarán en paz. Es posible que puedas matarlos con tus discos, prueba a lanzarlos contra ellos con el click izquierdo. 
+Mmm... parece que deberás adivinar la palabra, según mis fuentes, debes saltar encima y cuando estés en el aire, pulsar la E para poner cada letra... Oh no! Parece que estos iconos de accesibilidad no te dejarán en paz. Es posible que puedas matarlos con tus discos, prueba a lanzarlos contra ellos con el click izquierdo. 
 
 -> END
 
