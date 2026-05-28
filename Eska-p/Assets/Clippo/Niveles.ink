@@ -13,7 +13,7 @@ Mmm... parece que deberas adivinar la palabra, segun mis fuentes, debes saltar e
 -> END
 
 === level2 ===
-Lupas!? Déjame mirar cómo puedes destruirlas...Mm... Me temo que tengo malas noticias, deberas esquivar su luz, no hay forma de destruirlas. Mira por donde pisas!
+Lupas!? Dejame mirar como puedes destruirlas...Mm... Me temo que tengo malas noticias, deberas esquivar su luz, no hay forma de destruirlas. Mira por donde pisas!
 
 -> END
 === level3 ===
