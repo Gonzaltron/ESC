@@ -73,11 +73,11 @@ public class playercontroller : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            this.gameObject.transform.Rotate(Vector3.down * velRotacion * Time.deltaTime);
+            horizontalVelocity -= (transform.right * speed);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            this.gameObject.transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
+            horizontalVelocity += (transform.right * speed);
         }
 
         if (controller.isGrounded)

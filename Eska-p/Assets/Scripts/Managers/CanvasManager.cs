@@ -39,6 +39,8 @@ public class CanvasManager : MonoBehaviour
         Time.timeScale = 0f;           // Para el juego
         pauseCanvas.SetActive(true);
         if (gameCanvas != null) gameCanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     public void Seguir()
     {
@@ -46,11 +48,15 @@ public class CanvasManager : MonoBehaviour
         Time.timeScale = 1f;           
         pauseCanvas.SetActive(false);
         if (gameCanvas != null) gameCanvas.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     public void Empezar()
     {
         Time.timeScale = 1f;           //Resetea el juego desde 0
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     public void MainMenu()
     {

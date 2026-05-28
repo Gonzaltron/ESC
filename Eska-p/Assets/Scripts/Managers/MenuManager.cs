@@ -17,6 +17,8 @@ public class MenuManager : MonoBehaviour
     public void Jugar()
     {
         SceneManager.LoadScene("AllLevels");
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Creditos()
