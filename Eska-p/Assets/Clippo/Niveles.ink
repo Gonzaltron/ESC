@@ -37,5 +37,9 @@ Vale creo que lo tengo, que componente guarda temporalmente los datos de los pro
 -> END
 
 === Clue3 ===
-Os mando corazones, es una prueba
+Un componente que almacene todos los datos del ordenador de forma permanente? Dos palabras? Es posible que la primera palabra pueda tambien estar relacionada con la musica y la segunda sea un adjetivo?
+-> END
+
+=== Clue4 === 
+Uff no hace mucho calor aqui? Que podriamos utilizar para bajar la temperatura?
 -> END
