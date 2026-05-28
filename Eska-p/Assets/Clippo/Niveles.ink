@@ -4,36 +4,36 @@ Se puede saber qué haces TÚ AQUÍ!?? ... Así que el ordenador te ha abducido 
 -> END
 
 === Start2 ===
-En serio, no te enfades, porfi, que hay que buscar la salida, no nos quedemos aquí plantadas. Ah sí, dos cositas, puedes saltar con el ESPACIO y si me echas de menos y necesitas que te eche una mano, solo pulsa la C.
+En serio, no te enfades, porfi, que hay que buscar la salida, no nos quedemos aqui plantadas. Ah si, dos cositas, puedes saltar con el ESPACIO y si me echas de menos y necesitas que te eche una mano, solo pulsa la TECLA C.
 -> END
 
 === level1 ===
-Mmm... parece que deberás adivinar la palabra, según mis fuentes, debes saltar encima y cuando estés en el aire, pulsar la E para poner cada letra... Oh no! Parece que estos iconos de accesibilidad no te dejarán en paz. Es posible que puedas matarlos con tus discos, prueba a lanzarlos contra ellos con el click izquierdo. 
+Mmm... parece que deberas adivinar la palabra, segun mis fuentes, debes saltar encima y cuando estes en el aire, pulsar la TECLA E para poner cada letra... Oh no! Parece que estos iconos de accesibilidad no te dejaran en paz. Es posible que puedas matarlos con tus discos, prueba a lanzarlos contra ellos con el CLICK IZQUIERDO.
 
 -> END
 
 === level2 ===
-Lupas!? Déjame mirar cómo puedes destruírlas...Mm... Me temo que tengo malas noticias, deberás esquivar su luz, no hay forma de destruirlas. Mira por dónde pisas!
+Lupas!? Déjame mirar cómo puedes destruirlas...Mm... Me temo que tengo malas noticias, deberas esquivar su luz, no hay forma de destruirlas. Mira por donde pisas!
 
 -> END
 === level3 ===
-No me lo puedo creer!! Estos iconos de reinicio te bloquean el camino. Parece que no vas a poder atacar a ningún enemigo más, ten cuidado y esquívalos.
+No me lo puedo creer!! Estos iconos de reinicio te bloquean el camino. No crees que se ven mas peligrosos que los demas? Parece que no vas a poder atacar a ningún enemigo mas, ten cuidado y esquivalos.
 -> END
 === level4 ===
-HAN VUELTO LOS ICONOS DE ACCESIBILIDAD! Oh no nonono, la cosa se ha puesto mucho más difícil, esos botones de configuración sen ven más peligrosos que todos los demás, ten mucho cuidado. 
+HAN VUELTO LOS ICONOS DE ACCESIBILIDAD! Oh no nonono, la cosa se ha puesto mucho mas difícil, esos botones de configuracion te van a estorbar, ten mucho cuidado. 
 -> END
 
 
 === final ===
-Increíble, has conseguido escapar! No te voy a mentir, no pensé que lo conseguirías.
+Increible, has conseguido escapar! No te voy a mentir, no pense que lo conseguirias.
 
 -> END
 === Clue1 ===
-Mmm déjame pensar... Parece que se refiere al cerebro del ordenador, qué componente actúa como la pieza clave del ordenador?
+Mmm dejame pensar... Parece que se refiere al cerebro del ordenador, que componente actua como la pieza clave del ordenador?
 -> END
 
 === Clue2 ===
-Vale creo que lo tengo, qué componente guarda temporalmente los datos de los programas?
+Vale creo que lo tengo, que componente guarda temporalmente los datos de los programas?
 -> END
 
 === Clue3 ===
