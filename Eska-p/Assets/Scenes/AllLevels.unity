@@ -20634,7 +20634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knotName: level4
-  clueName: 
+  clueName: Clue4
   inkManager: {fileID: 1932021553}
   player: {fileID: 0}
 --- !u!1 &1925532119

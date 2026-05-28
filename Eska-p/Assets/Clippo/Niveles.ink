@@ -1,5 +1,5 @@
 === Start ===
-Se puede saber qué haces TÚ AQUÍ!?? ... Así que el ordenador te ha abducido por usar mucho el fotolog... No es que le quiera dar la razón pero es verdad que pasabas demasiado tiempo ahí... Venga, no te enfades conmigo, si necesitas un momento ya sabes que puedes hacerlo con la tecla ESC.
+Se puede saber que haces TU AQU!?? ... Asi que el ordenador te ha abducido por usar mucho el fotolog... No es que le quiera dar la razon pero es verdad que pasabas demasiado tiempo ahi... Venga, no te enfades conmigo, si necesitas un momento ya sabes que puedes hacerlo con la tecla ESC.
 
 -> END
 
