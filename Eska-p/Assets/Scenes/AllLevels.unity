@@ -14031,7 +14031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   word: 
-  CorrectWord: 500052004f00430045005300410044004f005200
+  CorrectWord: 560045004e00540049004c00410044004f005200
   door: {fileID: 1383055232}
   CharState: 
   charWall:
