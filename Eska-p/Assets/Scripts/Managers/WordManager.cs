@@ -14,6 +14,7 @@ public class WordManager : MonoBehaviour
     [SerializeField] Material wrong;
     [SerializeField] Material wrongPlace;
     [SerializeField] Material defaultMat;
+    [SerializeField] CanvasManager canvasController;
     int index;
     int correctAmount;
     bool isComplete;
@@ -109,5 +110,10 @@ public class WordManager : MonoBehaviour
         word.RemoveAt(index - 1);
         charWall[index - 1].text = " ";
         index --;
+    }
+
+    public void Pause()
+    {
+        canvasController.Pause();
     }
 }

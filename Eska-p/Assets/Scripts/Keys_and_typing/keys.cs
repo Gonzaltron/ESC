@@ -26,6 +26,10 @@ public class keys : MonoBehaviour
         {
             wordManager.DeleteList();
         }
+        else if (CompareTag("ESC"))
+        {
+            wordManager.Pause();
+        }
         else
         {
             wordManager.AddChar(character);

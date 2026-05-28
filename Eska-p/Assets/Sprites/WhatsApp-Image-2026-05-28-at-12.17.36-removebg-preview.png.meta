@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e8bc6a4e32e287d4d9a86c609f9fc997
+guid: 99b161dfeaa22a14ea9862fa6d74bbff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,36 +123,14 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DELETR_Y_ESC-removebg-preview_0
+      name: WhatsApp-Image-2026-05-28-at-12.17.36-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 213
-        y: 269
-        width: 253
-        height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fcf81ef2d94ec8f47b6a86c7c84904d8
-      internalID: -1751286287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DELETR_Y_ESC-removebg-preview_1
-      rect:
-        serializedVersion: 2
-        x: 258
-        y: 209
+        x: 281
+        y: 185
         width: 131
-        height: 38
-      alignment: 0
+        height: 72
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -160,8 +138,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b16ffcd48b0cb6c40a4fbc88dfa88670
-      internalID: -697731806
+      spriteID: a1500bea1d4abfd4099a628595c3e82e
+      internalID: 1123068050
       vertices: []
       indices: 
       edges: []
@@ -170,7 +148,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 94fdccfa3599fa346946e6eb394d8114
+    spriteID: a0cdb12fd8aef5842af3b9b157e1abf1
     internalID: 0
     vertices: []
     indices: 
@@ -180,8 +158,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DELETR_Y_ESC-removebg-preview_0: -1751286287
-      DELETR_Y_ESC-removebg-preview_1: -697731806
+      WhatsApp-Image-2026-05-28-at-12.17.36-removebg-preview_0: 1123068050
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
