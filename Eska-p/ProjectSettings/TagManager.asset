@@ -14,6 +14,7 @@ TagManager:
   - Tecla
   - Borrar1
   - BorrarTodo
+  - ESC
   layers:
   - Default
   - TransparentFX
