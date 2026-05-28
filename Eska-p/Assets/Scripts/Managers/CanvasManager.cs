@@ -31,7 +31,6 @@ public class CanvasManager : MonoBehaviour
             if (isPaused) Seguir();
             else Pause();
         }
-
     }
     public void Pause()
     {
