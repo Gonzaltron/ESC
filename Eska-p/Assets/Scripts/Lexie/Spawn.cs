@@ -21,7 +21,7 @@ public class Spawn : MonoBehaviour
     {
         spawn = GameObject.FindGameObjectWithTag("spawn");
         player = Instantiate(player, spawn.transform.position, Quaternion.identity);
-        player.transform.GetChild(6).GetChild(0).localScale = new Vector3(0.99f, 0.99f, 0.99f);
+        //player.transform.GetChild(6).GetChild(0).localScale = new Vector3(0.99f, 0.99f, 0.99f);
         lastCheckpoint = spawn.transform.position;
     }
     public void SetCheckpoint(Vector3 checkpointPosition)
