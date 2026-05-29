@@ -21,6 +21,7 @@ public class Spawn : MonoBehaviour
     {
         spawn = GameObject.FindGameObjectWithTag("spawn");
         player = Instantiate(player, spawn.transform.position, Quaternion.identity);
+        player.transform.GetChild(6).GetChild(0).localScale = new Vector3(0.99f, 0.99f, 0.99f);
         lastCheckpoint = spawn.transform.position;
     }
     public void SetCheckpoint(Vector3 checkpointPosition)
@@ -30,7 +31,7 @@ public class Spawn : MonoBehaviour
 
     public void Respawn()
     {
-        player.GetComponent<CharacterController>().enabled = false; // Desactiva el CharacterController para evitar problemas de colisión
+        player.GetComponent<CharacterController>().enabled = false; // Desactiva el CharacterController para evitar problemas de colisiï¿½n
         player.transform.position = lastCheckpoint + Vector3.up * 1.5f;
         player.GetComponent<CharacterController>().enabled = true;
 
