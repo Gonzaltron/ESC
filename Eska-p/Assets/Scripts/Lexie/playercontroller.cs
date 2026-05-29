@@ -16,6 +16,7 @@ public class playercontroller : MonoBehaviour
     [SerializeField] float raycastDistance;
     [SerializeField] bool grounded;
     [SerializeField] CollisionForTyping childCollision;
+    [SerializeField] float sMouse = 200;
 
     private CharacterController controller;
     public Vector3 velVertical;
@@ -53,6 +54,7 @@ public class playercontroller : MonoBehaviour
             bombastic = false;
             bombasticTime = 0;
         }
+        float rx = Input.GetAxis("Mouse X") * sMouse * Time.deltaTime;
     }
 
     public Vector3 horizontalVelocity ;
