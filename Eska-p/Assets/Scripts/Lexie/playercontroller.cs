@@ -23,6 +23,7 @@ public class playercontroller : MonoBehaviour
     Vector3 down;
     bool bombastic;
     float bombasticTime;
+    Animator animator;
     
  
 
@@ -30,6 +31,7 @@ public class playercontroller : MonoBehaviour
     {
         down = Vector3.down;
         bombastic = false;
+        animator = transform.GetChild(6).gameObject.GetComponent<Animator>();
     }
     private void Awake()
     {
@@ -62,6 +64,7 @@ public class playercontroller : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             horizontalVelocity += (transform.forward * speed);
+            animator.SetBool("walk", true);
             //this.gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
             //controller.Move(transform.forward * speed * Time.deltaTime);
         }
@@ -70,14 +73,22 @@ public class playercontroller : MonoBehaviour
             //this.gameObject.transform.Translate(Vector3.back * speed * Time.deltaTime);
             //controller.Move(transform.forward * - speed * Time.deltaTime);
             horizontalVelocity -= (transform.forward * speed);
+            animator.SetBool("walk", true);
         }
         if (Input.GetKey(KeyCode.A))
         {
             this.gameObject.transform.Rotate(Vector3.down * velRotacion * Time.deltaTime);
+            animator.SetBool("walk", true);
         }
         if (Input.GetKey(KeyCode.D))
         {
             this.gameObject.transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
+            animator.SetBool("walk", true);
+        }
+
+        if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D))
+        {
+            animator.SetBool("walk", false);
         }
 
         if (controller.isGrounded)
@@ -86,12 +97,31 @@ public class playercontroller : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 velVertical.y = jumpHeight;
+                CheckGrounded();
             }
         }
 
         velVertical.y += gravedad * Time.deltaTime;
 
         controller.Move((horizontalVelocity + velVertical) * Time.deltaTime);
+        
+    }
+
+    void CheckGrounded()
+    {
+        while(!grounded)
+        {
+            continue;
+        }
+        if(bombastic)
+        {
+            animator.SetBool("bombasticJump", true);
+        }
+        else
+        {
+            animator.SetBool("jump", true);
+        }
+        StartCoroutine(JumpsFalse());
     }
 
     public void SaltoBoombastic()
@@ -102,7 +132,6 @@ public class playercontroller : MonoBehaviour
         // opcional: hacia arriba en lugar de hacia abajo
             velVertical.y = -velBombastic;
             bombastic = true;
-
         }
     }
 
@@ -114,6 +143,13 @@ public class playercontroller : MonoBehaviour
             bombastic = false;
             bombasticTime = 0;
         } 
+    }
+
+    IEnumerator JumpsFalse()
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("bombasticJump", false);
+        animator.SetBool("jump", false);
     }
     //void OnTriggerEnter(Collider other)
     //{
