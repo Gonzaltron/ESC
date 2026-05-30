@@ -16,6 +16,7 @@ public class playercontroller : MonoBehaviour
     [SerializeField] float raycastDistance;
     [SerializeField] bool grounded;
     [SerializeField] CollisionForTyping childCollision;
+    [SerializeField] float sMouse = 200;
 
     private CharacterController controller;
     public Vector3 velVertical;
@@ -53,6 +54,8 @@ public class playercontroller : MonoBehaviour
             bombastic = false;
             bombasticTime = 0;
         }
+        float rx = Input.GetAxis("Mouse X") * sMouse * Time.deltaTime;
+        transform.Rotate(0, rx, 0);
     }
 
     public Vector3 horizontalVelocity ;
@@ -73,11 +76,11 @@ public class playercontroller : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            this.gameObject.transform.Rotate(Vector3.down * velRotacion * Time.deltaTime);
+            horizontalVelocity -= (transform.right * speed);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            this.gameObject.transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
+            horizontalVelocity += (transform.right * speed);
         }
 
         if (controller.isGrounded)
