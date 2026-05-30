@@ -55,6 +55,7 @@ public class playercontroller : MonoBehaviour
             bombasticTime = 0;
         }
         float rx = Input.GetAxis("Mouse X") * sMouse * Time.deltaTime;
+        transform.Rotate(0, rx, 0);
     }
 
     public Vector3 horizontalVelocity ;
