@@ -17,7 +17,7 @@ public class playercontroller : MonoBehaviour
     [SerializeField] bool grounded;
     [SerializeField] CollisionForTyping childCollision;
     [SerializeField] float sMouse = 200;
-
+    private Vector3 keyInitialPosition;
     private CharacterController controller;
     public Vector3 velVertical;
     RaycastHit hit;
@@ -143,11 +143,18 @@ public class playercontroller : MonoBehaviour
        if(obj.TryGetComponent<keys>(out keys key) && bombastic == true)
         {
             key.addCharacter();
+            StartCoroutine(KeyActivated(obj));
             bombastic = false;
             bombasticTime = 0;
         } 
     }
-
+    IEnumerator KeyActivated(GameObject key)
+    {
+        Vector3 original = key.transform.position;
+        key.transform.position = original + Vector3.down * 0.7f;
+        yield return new WaitForSeconds(1f);
+        key.transform.position = original;
+    }
     IEnumerator JumpsFalse()
     {
         yield return new WaitForSeconds(0.5f);
