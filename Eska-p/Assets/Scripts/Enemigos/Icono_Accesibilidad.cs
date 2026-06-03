@@ -16,6 +16,8 @@ public class Icono_Accesibilidad : MonoBehaviour
     private bool isAttacking = false;
     private bool attackCoroutineRunning = false;
 
+    Animator anim;
+
     public GameObject player;
 
     public bool receivingDamage;
@@ -32,6 +34,7 @@ public class Icono_Accesibilidad : MonoBehaviour
     {
         playerT = GameObject.FindGameObjectWithTag("player").transform;
         player = playerT.gameObject;
+        anim = transform.GetChild(0).GetComponent<Animator>();
     }
 
     void Update()
@@ -52,6 +55,15 @@ public class Icono_Accesibilidad : MonoBehaviour
         else
         {
             StartAttack();
+        }
+
+        if(GetComponent<NavMeshAgent>().velocity.magnitude > 0.1f)
+        {
+            anim.SetBool("Caminar", true);
+        }
+        else
+        {
+            anim.SetBool("Caminar", false);
         }
     }
 
@@ -132,6 +144,16 @@ public class Icono_Accesibilidad : MonoBehaviour
 
     public void Die()
     {
+        StartCoroutine(DieAnimation());
+    }
+
+    IEnumerator DieAnimation()
+    {
+        anim.SetBool("Muere", true);
+        for (int i = 0; i < 47; i++)
+        {
+            yield return new WaitForEndOfFrame(); 
+        }
         spawner.EnemyDied();
         Destroy(gameObject);
     }
