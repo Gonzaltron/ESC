@@ -60,7 +60,7 @@ public class CanvasManager : MonoBehaviour
     }
     public void Empezar()
     {
-        AudioManager.Instance.musicSource.clip = AudioManager.Instance.MainTheme;
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.MainTheme);
         Time.timeScale = 1f;           //Resetea el juego desde 0
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Cursor.lockState = CursorLockMode.Locked;

@@ -42,7 +42,8 @@ public class playercontroller : MonoBehaviour
     void Update()
     {
         MovimientoNormal();
-        if(Input.GetKeyDown(KeyCode.E))
+        
+        if (Input.GetKeyDown(KeyCode.E))
         {
             SaltoBoombastic();
         }

@@ -56,6 +56,10 @@ public class AudioManager : MonoBehaviour
         {
             PlayMusic(MainTheme);
         }
+        else if (scene.name == "MainMenu" || scene.name == "Creditos")
+        {
+            PlayMusic(PauseTheme);
+        }
         else if (scene.name == "Derrota")
         {
             PlayMusic(LoseTheme);
