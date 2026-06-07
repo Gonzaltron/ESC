@@ -16,6 +16,7 @@ public class CollisionForTyping : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Collision with " + other.gameObject.name);
         playerController.SendChar(other.gameObject);
     }
 }

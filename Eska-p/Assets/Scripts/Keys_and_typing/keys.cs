@@ -18,6 +18,7 @@ public class keys : MonoBehaviour
     
     public void addCharacter()
     {
+        Debug.Log("Character ");
         if(CompareTag("Borrar1"))
         {
             wordManager.RemoveOne();

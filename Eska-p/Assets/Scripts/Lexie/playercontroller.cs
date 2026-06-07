@@ -32,7 +32,7 @@ public class playercontroller : MonoBehaviour
     {
         down = Vector3.down;
         bombastic = false;
-        animator = transform.GetChild(4).gameObject.GetComponent<Animator>();
+        animator = transform.GetChild(5).gameObject.GetComponent<Animator>();
     }
     private void Awake()
     {
@@ -140,6 +140,7 @@ public class playercontroller : MonoBehaviour
 
     public void SendChar(GameObject obj)
     {
+        Debug.Log("Enviando caracter");
        if(obj.TryGetComponent<keys>(out keys key) && bombastic == true)
         {
             key.addCharacter();
