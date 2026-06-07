@@ -175,12 +175,12 @@ MonoBehaviour:
   boom: {fileID: 66783431121414961}
   boomPos: {fileID: 4040277855777120248}
   boomRot: {fileID: 391275438579524755}
-  boomDist: 15
-  boomSpeed: 20
+  boomDist: 10
+  boomSpeed: 35
   damage: 1
   layMask:
     serializedVersion: 2
-    m_Bits: 4608
+    m_Bits: 4609
 --- !u!1 &2746803076293047434
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 2746803076293047434}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.000004053116, z: 0.385}
+  m_LocalPosition: {x: 0.6, y: 0.018, z: -0.45}
   m_LocalScale: {x: 0.6666667, y: 0.33333334, z: 0.6666667}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -570,6 +570,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9208847383745477158, guid: ad8e2e5a034f2a94183cfe8de7e246b0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208847383745477158, guid: ad8e2e5a034f2a94183cfe8de7e246b0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208847383745477158, guid: ad8e2e5a034f2a94183cfe8de7e246b0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208847383745477158, guid: ad8e2e5a034f2a94183cfe8de7e246b0, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.591444
       objectReference: {fileID: 0}
@@ -603,6 +615,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9208847383745477158, guid: ad8e2e5a034f2a94183cfe8de7e246b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208847383745477158, guid: ad8e2e5a034f2a94183cfe8de7e246b0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
