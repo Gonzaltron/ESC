@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    public AudioClip[] a;
+    public AudioClip golpeSound, iconoDeadSound, lexiDeadSound, checkpointSound, clippoSound;
     public AudioSource musicSource, sfxSource;
 
     public AudioClip VictoryTheme, MainTheme;
@@ -83,8 +83,26 @@ public class AudioManager : MonoBehaviour
             PlayMusic(MainTheme);
         }
     }
+    public void PlayGolpeSound()
+    {
+        sfxSource.PlayOneShot(golpeSound);
+    }
 
+    public void PlayIconoDeadSound()
+    {
+        sfxSource.PlayOneShot(iconoDeadSound);
+    }
+    public void PlayLexiDeadSound()
+    {
+        sfxSource.PlayOneShot(lexiDeadSound);
+    }
+    public void PlayCheckpointSound()
+    {
+        sfxSource.PlayOneShot(checkpointSound);
+    }
 
-  
-
+    public void PlayClippoSound()
+    {
+        sfxSource.PlayOneShot(clippoSound);
+    }
 }

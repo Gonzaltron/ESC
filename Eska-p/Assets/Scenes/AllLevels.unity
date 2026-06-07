@@ -6264,11 +6264,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d8870550916b34096b84010dd70b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a: []
+  golpeSound: {fileID: 0}
+  iconoDeadSound: {fileID: 0}
+  lexiDeadSound: {fileID: 0}
+  checkpointSound: {fileID: 0}
+  clippoSound: {fileID: 0}
   musicSource: {fileID: 596123889}
   sfxSource: {fileID: 0}
   VictoryTheme: {fileID: 0}
   MainTheme: {fileID: 8300000, guid: 6dbde6f8f20453e4783b398fc2a39756, type: 3}
+  clippoSource: {fileID: 0}
 --- !u!1 &604461213 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8607383775186808992, guid: 5eab8750ffa282d4088d8468a1178294, type: 3}
@@ -7825,11 +7830,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d8870550916b34096b84010dd70b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a: []
+  golpeSound: {fileID: 8300000, guid: 72e0ff784d6e6d646b1f1e7d2673d742, type: 3}
+  iconoDeadSound: {fileID: 8300000, guid: b6c745a9228ce51458ca78d41b5d60e5, type: 3}
+  lexiDeadSound: {fileID: 8300000, guid: 5e434d2ce0e220444a5beabd80a7c7e5, type: 3}
+  checkpointSound: {fileID: 8300000, guid: c448b5d0cb68518449758cd2bb85ad24, type: 3}
+  clippoSound: {fileID: 8300000, guid: ceb8c3608cc06a64fac7e25db16d9280, type: 3}
   musicSource: {fileID: 764119826}
   sfxSource: {fileID: 1214310887}
-  VictoryTheme: {fileID: 0}
-  MainTheme: {fileID: 0}
+  VictoryTheme: {fileID: 8300000, guid: f8c1cf72b9e2cf14e8eb5477846eebac, type: 3}
+  MainTheme: {fileID: 8300000, guid: 6dbde6f8f20453e4783b398fc2a39756, type: 3}
+  clippoSource: {fileID: 764119826}
 --- !u!1 &873814609
 GameObject:
   m_ObjectHideFlags: 0

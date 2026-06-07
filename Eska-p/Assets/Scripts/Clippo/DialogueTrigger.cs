@@ -27,6 +27,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.CompareTag("player") && !activated) 
         {
+            AudioManager.Instance.PlayCheckpointSound();
             activated = true;
             Clippo.Instance.SetHint(clueName); 
             inkManager.StartDialogue(knotName); 

@@ -144,6 +144,7 @@ public class Icono_Accesibilidad : MonoBehaviour
 
     public void Die()
     {
+        AudioManager.Instance.PlayIconoDeadSound();
         StartCoroutine(DieAnimation());
     }
 
