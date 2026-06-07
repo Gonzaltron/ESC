@@ -33,6 +33,7 @@ public class AudioManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
         float volume = PlayerPrefs.GetFloat("volume", 1f);
+        musicSource = GetComponent<AudioSource>();
         musicSource.volume = volume;
     }
     public void PlayMusic(AudioClip clip)
@@ -76,11 +77,11 @@ public class AudioManager : MonoBehaviour
     {
         if (scene.name == "AllLevels")
         {
-            PlayMusic(MenuTheme);
-        }
-        else if (scene.name == "a")
-        {
             PlayMusic(MainTheme);
+        }
+        else if (scene.name == "MainMenu")
+        {
+            PlayMusic(MenuTheme);
         }
     }
 
