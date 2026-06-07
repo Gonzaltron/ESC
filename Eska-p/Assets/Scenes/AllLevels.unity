@@ -6149,12 +6149,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4540886346373041006, guid: b817775226a97544eb0ec82f5cd14dc0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 596123889}
-    - targetCorrespondingSourceObject: {fileID: 4540886346373041006, guid: b817775226a97544eb0ec82f5cd14dc0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 596123895}
-    - targetCorrespondingSourceObject: {fileID: 4540886346373041006, guid: b817775226a97544eb0ec82f5cd14dc0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 596123896}
   m_SourcePrefab: {fileID: 100100000, guid: b817775226a97544eb0ec82f5cd14dc0, type: 3}
 --- !u!1 &596123888 stripped
 GameObject:
@@ -6279,45 +6273,7 @@ MonoBehaviour:
   sfxSource: {fileID: 0}
   VictoryTheme: {fileID: 0}
   MainTheme: {fileID: 8300000, guid: 6dbde6f8f20453e4783b398fc2a39756, type: 3}
---- !u!54 &596123895
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596123888}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0.21
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!114 &596123896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596123888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e347a247dd6cdc4b861fc058cf6925a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  clippoSource: {fileID: 0}
 --- !u!1 &604461213 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8607383775186808992, guid: 5eab8750ffa282d4088d8468a1178294, type: 3}
@@ -7883,6 +7839,7 @@ MonoBehaviour:
   sfxSource: {fileID: 1214310887}
   VictoryTheme: {fileID: 8300000, guid: f8c1cf72b9e2cf14e8eb5477846eebac, type: 3}
   MainTheme: {fileID: 8300000, guid: 6dbde6f8f20453e4783b398fc2a39756, type: 3}
+  clippoSource: {fileID: 764119826}
 --- !u!1 &873814609
 GameObject:
   m_ObjectHideFlags: 0
