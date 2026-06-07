@@ -28,12 +28,22 @@ public class CanvasManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused) Seguir();
-            else Pause();
+            if (isPaused)
+            {
+                AudioManager.Instance.musicSource.clip = AudioManager.Instance.MainTheme;
+                AudioManager.Instance.musicSource.Play();
+                Seguir();
+            }
+            else
+            {
+                AudioManager.Instance.PlayMusic(AudioManager.Instance.MainTheme); // cambiar despues
+                Pause();
+            }
         }
     }
     public void Pause()
     {
+        
         isPaused = true;
         Time.timeScale = 0f;           // Para el juego
         pauseCanvas.SetActive(true);
