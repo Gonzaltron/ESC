@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip golpeSound, iconoDeadSound, lexiDeadSound, checkpointSound, clippoSound;
     public AudioSource musicSource, sfxSource;
 
-    public AudioClip VictoryTheme, MainTheme;
+    public AudioClip VictoryTheme, MainTheme, PauseTheme, LoseTheme;
 
 
     private void Awake()
@@ -45,33 +45,7 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
-    public void ToggleMusic()
-    {
-        musicSource.mute = !musicSource.mute;
-    }
-    public void ToggleSFX()
-    {
-        sfxSource.mute = !sfxSource.mute;
-    }
-    public void MusicVolume(float volume)
-    {
-        musicSource.volume = volume;
-        PlayerPrefs.SetFloat("volume", volume);
-    }
-    public void SFXVolume(float volume)
-    {
-        sfxSource.volume = volume;
-        PlayerPrefs.SetFloat("sfxVolume", volume);
-    }
-    public float GetMusicVolume()
-    {
-        return musicSource.volume;
-    }
-    public float GetSFXVolume()
-    {
-        return sfxSource.volume;
-    }
-
+    
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "Victoria")
@@ -81,6 +55,10 @@ public class AudioManager : MonoBehaviour
         else if (scene.name == "AllLevels")
         {
             PlayMusic(MainTheme);
+        }
+        else if (scene.name == "Derrota")
+        {
+            PlayMusic(LoseTheme);
         }
     }
     public void PlayGolpeSound()
@@ -105,4 +83,5 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.PlayOneShot(clippoSound);
     }
+   
 }

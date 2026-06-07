@@ -7,7 +7,6 @@ public class CanvasManager : MonoBehaviour
 
     public GameObject pauseCanvas;
     public GameObject gameCanvas;
-
     public void Awake()
     {
         pauseCanvas.SetActive(false);
@@ -30,20 +29,18 @@ public class CanvasManager : MonoBehaviour
         {
             if (isPaused)
             {
-                AudioManager.Instance.musicSource.clip = AudioManager.Instance.MainTheme;
-                AudioManager.Instance.musicSource.Play();
                 Seguir();
             }
             else
             {
-                AudioManager.Instance.PlayMusic(AudioManager.Instance.MainTheme); // cambiar despues
+                AudioManager.Instance.PlayMusic(AudioManager.Instance.MainTheme);
                 Pause();
             }
         }
     }
     public void Pause()
     {
-        
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.PauseTheme); 
         isPaused = true;
         Time.timeScale = 0f;           // Para el juego
         pauseCanvas.SetActive(true);
@@ -53,6 +50,7 @@ public class CanvasManager : MonoBehaviour
     }
     public void Seguir()
     {
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.MainTheme);
         isPaused = false;
         Time.timeScale = 1f;           
         pauseCanvas.SetActive(false);
@@ -62,6 +60,7 @@ public class CanvasManager : MonoBehaviour
     }
     public void Empezar()
     {
+        AudioManager.Instance.musicSource.clip = AudioManager.Instance.MainTheme;
         Time.timeScale = 1f;           //Resetea el juego desde 0
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Cursor.lockState = CursorLockMode.Locked;

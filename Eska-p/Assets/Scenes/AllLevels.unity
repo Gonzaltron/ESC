@@ -7708,9 +7708,10 @@ MonoBehaviour:
   clippoSound: {fileID: 8300000, guid: 7d8cf1fd17c509d44914a73f74d7e7cc, type: 3}
   musicSource: {fileID: 764119826}
   sfxSource: {fileID: 1214310887}
-  dialogueSource: {fileID: 1862276947}
   VictoryTheme: {fileID: 8300000, guid: f8c1cf72b9e2cf14e8eb5477846eebac, type: 3}
   MainTheme: {fileID: 8300000, guid: 6dbde6f8f20453e4783b398fc2a39756, type: 3}
+  PauseTheme: {fileID: 8300000, guid: 60143befeaef7d545b99574b5527762e, type: 3}
+  LoseTheme: {fileID: 8300000, guid: 5f99a136f08708a4b8a3c051d114d688, type: 3}
 --- !u!1 &873814609
 GameObject:
   m_ObjectHideFlags: 0
