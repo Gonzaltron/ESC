@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] a;
     public AudioSource musicSource, sfxSource;
 
-    public AudioClip MenuTheme, MainTheme;
+    public AudioClip VictoryTheme, MainTheme;
 
 
     private void Awake()
@@ -74,11 +74,11 @@ public class AudioManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "AllLevels")
+        if (scene.name == "Victoria")
         {
-            PlayMusic(MenuTheme);
+            PlayMusic(VictoryTheme);
         }
-        else if (scene.name == "a")
+        else if (scene.name == "AllLevels")
         {
             PlayMusic(MainTheme);
         }
