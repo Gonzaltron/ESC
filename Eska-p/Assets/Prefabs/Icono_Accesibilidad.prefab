@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerT: {fileID: 8093818310404501921, guid: 4964953dff287694596463f5ad7eead6, type: 3}
-  speed: 10
+  speed: 5
   attackDistance: 3
   escapingAttackDistance: 4
   player: {fileID: 1624319360984318666, guid: 4964953dff287694596463f5ad7eead6, type: 3}
