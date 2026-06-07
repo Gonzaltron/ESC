@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] a;
     public AudioSource musicSource, sfxSource;
 
-    public AudioClip MenuTheme, MainTheme;
+    public AudioClip VictoryTheme, MainTheme;
 
 
     private void Awake()
@@ -33,7 +33,6 @@ public class AudioManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
         float volume = PlayerPrefs.GetFloat("volume", 1f);
-        musicSource = GetComponent<AudioSource>();
         musicSource.volume = volume;
     }
     public void PlayMusic(AudioClip clip)
@@ -77,18 +76,11 @@ public class AudioManager : MonoBehaviour
     {
         if (scene.name == "Victoria")
         {
-<<<<<<< HEAD
-=======
             PlayMusic(VictoryTheme);
         }
         else if (scene.name == "AllLevels")
         {
->>>>>>> 50693482ab92e67e128f092a4879596e368858a2
             PlayMusic(MainTheme);
-        }
-        else if (scene.name == "MainMenu")
-        {
-            PlayMusic(MenuTheme);
         }
     }
 
