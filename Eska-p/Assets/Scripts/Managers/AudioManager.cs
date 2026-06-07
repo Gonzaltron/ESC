@@ -75,8 +75,15 @@ public class AudioManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "AllLevels")
+        if (scene.name == "Victoria")
         {
+<<<<<<< HEAD
+=======
+            PlayMusic(VictoryTheme);
+        }
+        else if (scene.name == "AllLevels")
+        {
+>>>>>>> 50693482ab92e67e128f092a4879596e368858a2
             PlayMusic(MainTheme);
         }
         else if (scene.name == "MainMenu")
