@@ -16,7 +16,7 @@ public class playercontroller : MonoBehaviour
     [SerializeField] float raycastDistance;
     [SerializeField] bool grounded;
     [SerializeField] CollisionForTyping childCollision;
-    [SerializeField] float sMouse = 200;
+    [SerializeField] float sMouse = 800;
     private Vector3 keyInitialPosition;
     private CharacterController controller;
     public Vector3 velVertical;
@@ -32,7 +32,7 @@ public class playercontroller : MonoBehaviour
     {
         down = Vector3.down;
         bombastic = false;
-        animator = transform.GetChild(6).gameObject.GetComponent<Animator>();
+        animator = transform.GetChild(4).gameObject.GetComponent<Animator>();
     }
     private void Awake()
     {
@@ -80,12 +80,12 @@ public class playercontroller : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            this.gameObject.transform.Rotate(Vector3.down * velRotacion * Time.deltaTime);
+           horizontalVelocity -= (transform.right * speed);
             animator.SetBool("walk", true);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            this.gameObject.transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
+            horizontalVelocity += (transform.right * speed);
             animator.SetBool("walk", true);
         }
 
