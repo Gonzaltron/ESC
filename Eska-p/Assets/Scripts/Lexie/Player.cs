@@ -82,10 +82,12 @@ public class Player : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("reinicio"))
         {
+            AudioManager.Instance.PlayGolpeSound();
             TakeDamage(2);
         }
         else if (other.gameObject.CompareTag("configuracion") || other.gameObject.CompareTag("lupa"))
         {
+            AudioManager.Instance.PlayGolpeSound();
             TakeDamage(1);
         }
         
@@ -93,6 +95,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        AudioManager.Instance.PlayLexiDeadSound();
         health = 3;
         healthText.text = "Vida: " + health.ToString() + "/3";
         Spawn.Instance.Respawn();
