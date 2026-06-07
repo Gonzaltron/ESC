@@ -68,7 +68,6 @@ public class InkManager : MonoBehaviour
     {
         isTyping = true;
         dialogueText.text = "";
-        AudioManager.Instance.PlayClippoSound();
         foreach (char letter in text)
         {
             dialogueText.text += letter;

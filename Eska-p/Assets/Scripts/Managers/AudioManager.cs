@@ -79,9 +79,6 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(checkpointSound);
     }
 
-    public void PlayClippoSound()
-    {
-        sfxSource.PlayOneShot(clippoSound);
-    }
+
    
 }
